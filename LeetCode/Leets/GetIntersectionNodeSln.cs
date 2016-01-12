@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace LeetCode.Leets
+{
+    class GetIntersectionNodeSln : ISolution
+    {
+        //相同的即是交点
+        public ListNode GetIntersectionNode(ListNode headA, ListNode headB)
+        {
+            ListNode p1 = headA;
+            ListNode p2 = headB;
+
+
+            if (p1 == null || p2 == null) return null;
+            while (p1 != null && p2 != null && p1 != p2)
+            {
+                p1 = p1.next;
+                p2 = p2.next;
+
+                if (p1 == p2) return p1;
+
+                if (p1 == null) p1 = headB;
+                if (p2 == null) p2 = headA;
+            }
+            return p1;
+        }
+        public void Execute()
+        {
+            throw new NotImplementedException();
+        }
+    }
+}
