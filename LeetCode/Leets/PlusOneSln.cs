@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace LeetCode.Leets
+﻿namespace LeetCode.Leets
 {
     class PlusOneSln : ISolution
     {

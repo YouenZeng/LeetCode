@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,6 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="51nod\SumInt.cs" />
+    <Compile Include="Algorithm\BuildingWall.cs" />
+    <Compile Include="Algorithm\EightQueen.cs" />
     <Compile Include="Algorithm\PackProblem.cs" />
     <Compile Include="Dp\DpLearn.cs" />
     <Compile Include="Infra\AllSort.cs" />
@@ -53,10 +57,12 @@
     <Compile Include="Leets\ComputeAreaSln.cs" />
     <Compile Include="Leets\ContainsDuplicateSln.cs" />
     <Compile Include="Leets\ContainsNearbyDuplicateSln.cs" />
+    <Compile Include="Leets\ConvertToTitleSln.cs" />
     <Compile Include="Leets\CountAndSaySln.cs" />
     <Compile Include="Leets\DeleteDuplicatesSln.cs" />
     <Compile Include="Leets\DeleteNodeSln.cs" />
     <Compile Include="Leets\FindKthLargest.cs" />
+    <Compile Include="Leets\FirstBadVersionSln.cs" />
     <Compile Include="Leets\GetIntersectionNodeSln.cs" />
     <Compile Include="Leets\HasPathSumSln.cs" />
     <Compile Include="Leets\HouseRobberSln.cs" />
@@ -106,6 +112,7 @@
     <Compile Include="Leets\ReverseListSln.cs" />
     <Compile Include="Leets\ReverseWord.cs" />
     <Compile Include="Leets\RomanToIntSln.cs" />
+    <Compile Include="Leets\RotateArray.cs" />
     <Compile Include="Leets\RotateSln.cs" />
     <Compile Include="Leets\ScrambleStringSln.cs" />
     <Compile Include="Leets\SearchInsert.cs" />
