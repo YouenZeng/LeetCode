@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using System.IO;
 using LeetCode.Leets;
 
@@ -8,12 +9,12 @@ namespace LeetCode
     {
         public static void Main()
         {
-            ISolution soln = new ReverseInt();
-            soln.Execute();
-
-
-
+            ISolution sln = new SubsetsSln();
+            sln.Execute();
+            
             Console.ReadLine();
         }
+
     }
 }
+
