@@ -109,6 +109,7 @@
     <Compile Include="Leets\RemoveDuplicates.cs" />
     <Compile Include="Leets\RemoveNthFromEndSln.cs" />
     <Compile Include="Leets\ReverseBitSln.cs" />
+    <Compile Include="Leets\ReverseInt.cs" />
     <Compile Include="Leets\ReverseListSln.cs" />
     <Compile Include="Leets\ReverseWord.cs" />
     <Compile Include="Leets\RomanToIntSln.cs" />
@@ -122,6 +123,7 @@
     <Compile Include="Leets\Solution.cs" />
     <Compile Include="Leets\StackSln.cs" />
     <Compile Include="Leets\SubsetsSln.cs" />
+    <Compile Include="Leets\SummaryRangesSln.cs" />
     <Compile Include="Leets\ThreeSumSln.cs" />
     <Compile Include="Leets\TitleToNumberSln.cs" />
     <Compile Include="Leets\TrailingZeroesSln.cs" />
@@ -129,6 +131,7 @@
     <Compile Include="Leets\TwoSumSln.cs" />
     <Compile Include="Leets\WordLadderSolution.cs" />
     <Compile Include="Leets\WordPatternSln.cs" />
+    <Compile Include="Leets\ZigzagConvert.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

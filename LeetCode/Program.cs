@@ -8,8 +8,10 @@ namespace LeetCode
     {
         public static void Main()
         {
-            ISolution soln = new FirstBadVersionSln();
+            ISolution soln = new ReverseInt();
             soln.Execute();
+
+
 
             Console.ReadLine();
         }
