@@ -19,7 +19,6 @@ namespace LeetCode.Leets
             }
             int mid = m + (n - m) / 2 ;
 
-            Console.WriteLine("m:{0},n{1},mid:{2}", m, n, mid);
             if (IsBadVersion(mid))
             {
                 return BadVersionBst(m, mid);

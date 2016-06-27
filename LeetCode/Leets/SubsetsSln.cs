@@ -9,12 +9,20 @@ namespace LeetCode.Leets
     {
         public IList<IList<int>> Subsets(int[] nums)
         {
+<<<<<<< HEAD
             IList<IList<int>> result = new List<IList<int>>();
 
+=======
+            //添加数字构建subset 
+
+            IList<IList<int>> result = new List<IList<int>>();
+
+>>>>>>> bf4ed5a2bd2d1c537991a09e09e1bd285de2d989
             IList<int> current = new List<int>();
 
             Array.Sort(nums);
             result.Add(current);
+<<<<<<< HEAD
 //            GetSubsets(nums, 0, result, current,int.MinValue);
 
             for (int i = 0; i < nums.Length; i++)
@@ -34,11 +42,24 @@ namespace LeetCode.Leets
                         element.Add(nums[i]);
                         result.Add(new List<int>(element));
                     }
+=======
+
+            for (int i = 0; i < nums.Length; i++)
+            {
+                int resultLength = result.Count;
+
+                for (int j = 0; j < resultLength; j++)
+                {
+                    current = new List<int>(result[j]);
+                    current.Add(nums[i]);
+                    result.Add(new List<int>(current));
+>>>>>>> bf4ed5a2bd2d1c537991a09e09e1bd285de2d989
                 }
             }
             return result;
         }
 
+<<<<<<< HEAD
         private void GetSubsets(int[] nums, int start, IList<IList<int>> result, IList<int> current,int preValue)
         {
             int numsLength = nums.Length;
@@ -87,15 +108,47 @@ namespace LeetCode.Leets
                 }
             }
             return result;
+=======
+        public IList<IList<int>> Subsets2(int[] nums)
+        {
+            //backtracking
+
+            IList<IList<int>> result = new List<IList<int>>();
+
+            IList<int> current = new List<int>();
+
+            Array.Sort(nums);
+            result.Add(current);
+
+            FindAllSets(nums, 0, current, result);
+
+            return result;
+        }
+
+        private void FindAllSets(int[] nums, int start, IList<int> lst, IList<IList<int>> result)
+        {
+            for (int i = start; i < nums.Length; i++)
+            {
+                lst.Add(nums[i]);
+                result.Add(new List<int>(lst));
+
+                FindAllSets(nums, i + 1, lst, result);
+                lst.RemoveAt(lst.Count-1 ); //与lst.Add(nums[i])对应
+            }
+>>>>>>> bf4ed5a2bd2d1c537991a09e09e1bd285de2d989
         }
 
         public void Execute()
         {
+<<<<<<< HEAD
             Stest s = new Stest();
 
             Subsets(new[] { 1, 2, 2});
 
             
+=======
+            Subsets2(new[] { 1, 2, 3 });
+>>>>>>> bf4ed5a2bd2d1c537991a09e09e1bd285de2d989
         }
     }
 
