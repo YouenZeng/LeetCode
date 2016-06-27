@@ -1,19 +1,22 @@
 ﻿using System;
+using System.Collections;
+using System.Diagnostics;
 using System.IO;
+using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
 using LeetCode.Leets;
 
 namespace LeetCode
 {
     internal class Program
     {
-        public static void Main()
+        static void Main(string[] args)
         {
-            ISolution soln = new ReverseInt();
-            soln.Execute();
-
-
-
-            Console.ReadLine();
+            ISolution sln = new DeleteDuplicatesTwo();
+            sln.Execute();
         }
+
+
     }
 }
