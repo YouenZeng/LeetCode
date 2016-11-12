@@ -42,20 +42,12 @@ namespace LeetCode.Leets
                     prevHead.next = prevDiff.next;
                 }
                 prevDiff = prevDiff.next;
-
-
-                //                else
-                //                {
-                //                    prevHead.next = prevDiff;
-                //                    prevHead = prevHead.next;
-                //                    
-                //                    prevDiff = prevDiff.next;
-                //                }
             }
             return fakedHead.next;
         }
         public void Execute()
         {
+            
             ListNode node1 = new ListNode(1);
             ListNode node2 = new ListNode(1);
             ListNode node3 = new ListNode(1);
