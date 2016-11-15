@@ -51,6 +51,7 @@
     <Compile Include="Dp\DpLearn.cs" />
     <Compile Include="Infra\AllSort.cs" />
     <Compile Include="LeetAgain\FindKthLargestSln.cs" />
+    <Compile Include="LeetAgain\RemoveDuplicatesSln.cs" />
     <Compile Include="Leets\AddBinarySln.cs" />
     <Compile Include="Leets\AddDigitsSln.cs" />
     <Compile Include="Leets\CandySln.cs" />

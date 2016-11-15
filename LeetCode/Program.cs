@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Threading;
 using System.Threading.Tasks;
 using LeetCode.LeetAgain;
+using LeetCode.Leets;
 
 namespace LeetCode
 {
@@ -13,7 +14,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            FindKthLargestSln sln = new FindKthLargestSln();
+            ISolution sln = new RemoveDuplicatesSln();
             sln.Execute();
         }
 
