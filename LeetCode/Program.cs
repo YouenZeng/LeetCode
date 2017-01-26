@@ -1,12 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Diagnostics;
-using System.IO;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
-using LeetCode.LeetAgain;
-
+﻿using LeetCode.LeetAgain;
+using System;
 namespace LeetCode
 {
     internal class Program
@@ -15,9 +8,8 @@ namespace LeetCode
         {
             FindKthLargestSln sln = new FindKthLargestSln();
             sln.Execute();
+            Console.WriteLine("Hello");
         }
-
-
     }
 }
 
