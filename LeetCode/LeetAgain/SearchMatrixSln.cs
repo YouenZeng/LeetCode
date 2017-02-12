@@ -6,7 +6,7 @@ namespace LeetCode.LeetAgain
     {
         public bool SearchMatrix(int[,] matrix, int target)
         {
-            
+            throw new NotImplementedException();
         }
         void ISolution.Execute()
         {
