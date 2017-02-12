@@ -1,13 +1,5 @@
-﻿using System;
-using System.Collections;
-using System.Diagnostics;
-using System.IO;
-using System.Net.Http;
-using System.Threading;
-using System.Threading.Tasks;
 using LeetCode.LeetAgain;
-using LeetCode.Leets;
-
+using System;
 namespace LeetCode
 {
     internal class Program
@@ -16,9 +8,8 @@ namespace LeetCode
         {
             ISolution sln = new RemoveDuplicatesSln();
             sln.Execute();
+            Console.WriteLine("Hello");
         }
-
-
     }
 }
 
