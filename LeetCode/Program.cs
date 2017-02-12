@@ -1,14 +1,12 @@
 using LeetCode.LeetAgain;
 
-using System;
-
 namespace LeetCode
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Leets.ISolution sln = new IsPalindromeSln();
+            ISolution sln = new HammingWeightSln();
             sln.Execute();
         }
     }
