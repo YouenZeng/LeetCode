@@ -6,8 +6,16 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new HammingWeightSln();
-            sln.Execute();
+            try
+            {
+                ISolution sln = new SearchMatrixSlnNew();
+                sln.Execute();
+            }
+            catch (System.Exception ex)
+            {
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine(ex.StackTrace);
+            }
         }
     }
 }
