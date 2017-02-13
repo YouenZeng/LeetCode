@@ -1,9 +1,10 @@
 using System;
 using System.Text;
+using Leetcode;
 
-namespace Leetcode.LeetAgain
+namespace LeetCode.LeetAgain
 {
-    public class LicenseKeyFormattingSln : ISolution
+   public class LicenseKeyFormattingSln : ISolution
     {
         public string LicenseKeyFormatting(string S, int K)
         {

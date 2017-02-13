@@ -5,9 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using LeetCode.Leets;
 
+
 namespace LeetCode.LeetAgain
 {
-    class RemoveDuplicatesSln : ISolution
+    public class RemoveDuplicatesSln : ISolution
     {
         public int RemoveDuplicates(int[] nums)
         {
