@@ -8,7 +8,8 @@ namespace LeetCode
         {
             try
             {
-                ISolution sln = new SearchMatrixSlnNew();
+                NumArray arr = new NumArray(new [] { -2, 0, 3, -5, 2, -1 });
+                ISolution sln = new MinimumTotalSln();
                 sln.Execute();
             }
             catch (System.Exception ex)
