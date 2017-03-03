@@ -1,4 +1,5 @@
 ﻿using LeetCode.LeetAgain;
+
 using System;
 namespace LeetCode
 {
@@ -6,7 +7,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            FindKthLargestSln sln = new FindKthLargestSln();
+            LeetCode.Leets.ISolution sln = new IsPalindromeSln();
             sln.Execute();
             Console.WriteLine("Hello");
         }
