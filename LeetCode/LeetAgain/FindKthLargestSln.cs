@@ -10,6 +10,9 @@ namespace LeetCode.LeetAgain
 {
     class FindKthLargestSln : ISolution
     {
+
+        //todo: use heap sort
+
         public int FindKthLargest(int[] nums, int k)
         {
             //            QuickSort(nums,0,nums.Length-1);
