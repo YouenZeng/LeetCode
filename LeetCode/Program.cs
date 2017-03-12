@@ -8,7 +8,7 @@ namespace LeetCode
         {
             try
             {
-                ISolution sln = new RobSln();
+                ISolution sln = new SubsetsSln();
                 sln.Execute();
             }
             catch (System.Exception ex)
