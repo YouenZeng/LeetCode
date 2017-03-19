@@ -1,4 +1,5 @@
 using System;
+using LeetCode;
 using LeetCode.Leets;
 public class IsPalindromeSln : ISolution
 {

@@ -6,16 +6,8 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            try
-            {
-                ISolution sln = new SubsetsSln();
-                sln.Execute();
-            }
-            catch (System.Exception ex)
-            {
-                System.Console.WriteLine(ex.Message);
-                System.Console.WriteLine(ex.StackTrace);
-            }
+            ISolution sln = new TwoSumOneSln();
+            sln.Execute();
         }
     }
 }
