@@ -6,7 +6,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new TwoSumOneSln();
+            ISolution sln = new FindDuplicateSln();
             sln.Execute();
         }
     }
