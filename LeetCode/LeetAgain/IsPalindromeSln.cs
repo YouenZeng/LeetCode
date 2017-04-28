@@ -1,47 +1,36 @@
-
-namespace LeetCode.LeetAgain
+using System;
+using LeetCode;
+using LeetCode.Leets;
+public class IsPalindromeSln : ISolution
 {
-    public class IsPalindromeSln : ISolution
+
+    public bool IsPalindrome(int x)
     {
-        public bool IsPalindrome(string s)
+        int result = 0;
+        if (x < 0) return false;
+        if (x != 0 && x % 10 == 0) return false;
+        while (result < x)
         {
-            if (string.IsNullOrEmpty(s)) return true;
-
-            int stringLenth = s.Length;
-            int startIndex = 0;
-            int endIndex = s.Length - 1;
-            while (startIndex < endIndex)
-            {
-                char startChar = s[startIndex];
-
-                if (char.IsLetterOrDigit(startChar) == false)
-                {
-                    startIndex++;
-                    continue;
-                }
-                char endChar = s[endIndex];
-                if (char.IsLetterOrDigit(endChar) == false)
-                {
-                    endIndex--;
-                    continue;
-                }
-
-                if (char.ToLower(startChar) == char.ToLower(endChar))
-                {
-                    startIndex++;
-                    endIndex--;
-                    continue;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            return true;
+            result = result * 10 + x % 10;
+            x = x / 10;
         }
-        void ISolution.Execute()
-        {
-            System.Console.WriteLine(IsPalindrome("a"));;
-        }
+
+        return (x == result) || (x == result / 10);
+        //throw new NotImplementedException();
+    }
+
+    public bool IsPalindrome(ListNode head)
+    {
+        
+
+        throw new NotImplementedException();
+    }
+
+    void ISolution.Execute()
+    {
+        System.Console.WriteLine(IsPalindrome(12321));
+        System.Console.WriteLine(IsPalindrome(1));
+        System.Console.WriteLine(IsPalindrome(1001));
+        System.Console.WriteLine(IsPalindrome(100001));
     }
 }
