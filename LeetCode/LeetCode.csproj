@@ -1,17 +1,17 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6B8FA9D2-AF90-4F0F-9A2E-A1EB7DC50065}</ProjectGuid>
+    <ProjectGuid>{0562B123-549B-4A81-82DF-900BB722FE31}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LeetCode</RootNamespace>
     <AssemblyName>LeetCode</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,19 +32,17 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="51nod\SumInt.cs" />
     <Compile Include="Algorithm\BuildingWall.cs" />
     <Compile Include="Algorithm\EightQueen.cs" />
     <Compile Include="Algorithm\PackProblem.cs" />
@@ -53,10 +52,10 @@
     <Compile Include="Infra\MajorityVote.cs" />
     <Compile Include="ISolution.cs" />
     <Compile Include="LeetAgain\CompareVersionSln.cs" />
-    <Compile Include="LeetAgain\CountBitsSln.cs" />
     <Compile Include="LeetAgain\FindAnagramsSln.cs" />
     <Compile Include="LeetAgain\FindDuplicateSln.cs" />
     <Compile Include="LeetAgain\FindKthLargestSln.cs" />
+    <Compile Include="LeetAgain\FirstUniqCharSln.cs" />
     <Compile Include="LeetAgain\HammingWeightSln.cs" />
     <Compile Include="LeetAgain\IncreasingTripletSln.cs" />
     <Compile Include="LeetAgain\IsIsomorphicSln.cs" />
@@ -70,7 +69,6 @@
     <Compile Include="LeetAgain\MaxSubArraySln.cs" />
     <Compile Include="LeetAgain\MinimumTotalSln.cs" />
     <Compile Include="LeetAgain\MissingNumberSln.cs" />
-    <Compile Include="LeetAgain\MyQueue.cs" />
     <Compile Include="LeetAgain\NumArraySln.cs" />
     <Compile Include="LeetAgain\ProductExceptSelfSln.cs" />
     <Compile Include="LeetAgain\ReadBinaryWatchSln.cs" />
@@ -78,9 +76,11 @@
     <Compile Include="LeetAgain\RemoveElementSln.cs" />
     <Compile Include="LeetAgain\RestoreIpAddressesDfsSln.cs" />
     <Compile Include="LeetAgain\RestoreIpAddressesSln.cs" />
+    <Compile Include="LeetAgain\ReverseWordsSln.cs" />
     <Compile Include="LeetAgain\RobSln.cs" />
     <Compile Include="LeetAgain\SearchMatrixSln.cs" />
     <Compile Include="LeetAgain\SearchMatrixSlnNew.cs" />
+    <Compile Include="LeetAgain\StrStrSln.cs" />
     <Compile Include="LeetAgain\SubsetsSln.cs" />
     <Compile Include="LeetAgain\ThirdMaxSln.cs" />
     <Compile Include="LeetAgain\TwoSumOneSln.cs" />
@@ -170,43 +170,19 @@
     <Compile Include="Leets\WordLadderSolution.cs" />
     <Compile Include="Leets\WordPatternSln.cs" />
     <Compile Include="Leets\ZigzagConvert.cs" />
-    <Compile Include="obj\Debug\netcoreapp1.1\LeetCode.AssemblyInfo.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
-    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include=".vscode\launch.json" />
-    <None Include=".vscode\tasks.json" />
-    <None Include="App.config" />
-    <None Include="bin\Debug\LeetCode.exe.config" />
-    <None Include="bin\Debug\LeetCode.vshost.exe.config" />
-    <None Include="bin\Debug\LeetCode.vshost.exe.manifest" />
-    <None Include="bin\Debug\netcoreapp1.1\LeetCode.deps.json" />
-    <None Include="bin\Debug\netcoreapp1.1\LeetCode.runtimeconfig.dev.json" />
-    <None Include="bin\Debug\netcoreapp1.1\LeetCode.runtimeconfig.json" />
-    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
-    <None Include="obj\Debug\netcoreapp1.1\CoreCompileInputs.cache" />
-    <None Include="obj\LeetCode.csproj.nuget.g.props" />
-    <None Include="obj\LeetCode.csproj.nuget.g.targets" />
-    <None Include="obj\project.assets.json" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\LeetCode.exe" />
-    <Content Include="bin\Debug\LeetCode.pdb" />
     <Content Include="bin\Debug\LeetCode.vshost.exe" />
-    <Content Include="bin\Debug\netcoreapp1.1\LeetCode.dll" />
-    <Content Include="bin\Debug\netcoreapp1.1\LeetCode.pdb" />
-    <Content Include="obj\Debug\LeetCode.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\LeetCode.exe" />
-    <Content Include="obj\Debug\netcoreapp1.1\LeetCode.csproj.FileListAbsolute.txt" />
-    <Content Include="obj\Debug\netcoreapp1.1\LeetCode.dll" />
-    <Content Include="obj\Debug\netcoreapp1.1\LeetCode.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Debug\LeetCode.vshost.exe.manifest" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="obj\Debug\TempPE\" />
-    <Folder Include="Properties\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

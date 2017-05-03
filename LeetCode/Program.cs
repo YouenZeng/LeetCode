@@ -6,8 +6,16 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindDuplicateSln();
-            sln.Execute();
+            try
+            {
+                ISolution sln = new ReverseWordsSln();
+                sln.Execute();
+            }
+            catch (System.Exception ex)
+            {
+                System.Console.WriteLine(ex.Message);
+                System.Console.WriteLine(ex.StackTrace);
+            }
         }
     }
 }
