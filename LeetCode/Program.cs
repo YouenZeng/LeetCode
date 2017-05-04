@@ -8,7 +8,7 @@ namespace LeetCode
         {
             try
             {
-                ISolution sln = new ReverseWordsSln();
+                ISolution sln = new CanCompleteCircuitSln();
                 sln.Execute();
             }
             catch (System.Exception ex)
