@@ -8,7 +8,7 @@ namespace LeetCode
         {
             try
             {
-                ISolution sln = new CanCompleteCircuitSln();
+                ISolution sln = new DecodeStringSln();
                 sln.Execute();
             }
             catch (System.Exception ex)

@@ -53,6 +53,7 @@
     <Compile Include="ISolution.cs" />
     <Compile Include="LeetAgain\CanCompleteCircuitSln.cs" />
     <Compile Include="LeetAgain\CompareVersionSln.cs" />
+    <Compile Include="LeetAgain\DecodeString.cs" />
     <Compile Include="LeetAgain\FindAnagramsSln.cs" />
     <Compile Include="LeetAgain\FindDuplicateSln.cs" />
     <Compile Include="LeetAgain\FindKthLargestSln.cs" />
