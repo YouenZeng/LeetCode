@@ -10,7 +10,7 @@ namespace LeetCode
 
             try
             {
-                ISolution sln = new MyStack();
+                ISolution sln = new DecodeStringSln();
                 sln.Execute();
             }
             catch (System.Exception ex)
