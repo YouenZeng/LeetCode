@@ -1,4 +1,5 @@
 using LeetCode.LeetAgain;
+using System;
 
 namespace LeetCode
 {
@@ -6,9 +7,10 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
+
             try
             {
-                ISolution sln = new ReverseWordsSln();
+                ISolution sln = new MyStack();
                 sln.Execute();
             }
             catch (System.Exception ex)

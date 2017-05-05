@@ -69,6 +69,8 @@
     <Compile Include="LeetAgain\MaxSubArraySln.cs" />
     <Compile Include="LeetAgain\MinimumTotalSln.cs" />
     <Compile Include="LeetAgain\MissingNumberSln.cs" />
+    <Compile Include="LeetAgain\MyQueue.cs" />
+    <Compile Include="LeetAgain\MyStack.cs" />
     <Compile Include="LeetAgain\NumArraySln.cs" />
     <Compile Include="LeetAgain\ProductExceptSelfSln.cs" />
     <Compile Include="LeetAgain\ReadBinaryWatchSln.cs" />
