@@ -10,7 +10,7 @@ namespace LeetCode
 
             try
             {
-                ISolution sln = new DecodeStringSln();
+                ISolution sln = new SearchMatrix2D();
                 sln.Execute();
             }
             catch (System.Exception ex)
@@ -18,6 +18,8 @@ namespace LeetCode
                 System.Console.WriteLine(ex.Message);
                 System.Console.WriteLine(ex.StackTrace);
             }
+
+            Console.ReadLine();
         }
     }
 }

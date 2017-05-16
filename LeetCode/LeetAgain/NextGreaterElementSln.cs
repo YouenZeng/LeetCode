@@ -8,7 +8,7 @@ namespace LeetCode.LeetAgain
     {
         public int[] NextGreaterElement(int[] findNums, int[] nums)
         {
-
+            throw new NotImplementedException();
         }
         public void Execute()
         {
