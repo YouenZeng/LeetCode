@@ -10,7 +10,7 @@ namespace LeetCode
 
             try
             {
-                ISolution sln = new SearchMatrix2D();
+                ISolution sln = new MatrixReshapeSln();
                 sln.Execute();
             }
             catch (System.Exception ex)

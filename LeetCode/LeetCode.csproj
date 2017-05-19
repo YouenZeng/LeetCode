@@ -51,6 +51,7 @@
     <Compile Include="Infra\AllSort.cs" />
     <Compile Include="Infra\MajorityVote.cs" />
     <Compile Include="ISolution.cs" />
+    <Compile Include="LeetAgain\ArrayPairSumSln.cs" />
     <Compile Include="LeetAgain\CanCompleteCircuitSln.cs" />
     <Compile Include="LeetAgain\CompareVersionSln.cs" />
     <Compile Include="LeetAgain\DecodeString.cs" />
@@ -58,12 +59,14 @@
     <Compile Include="LeetAgain\FindDuplicateSln.cs" />
     <Compile Include="LeetAgain\FindKthLargestSln.cs" />
     <Compile Include="LeetAgain\FirstUniqCharSln.cs" />
+    <Compile Include="LeetAgain\HammingDistanceSln.cs" />
     <Compile Include="LeetAgain\HammingWeightSln.cs" />
     <Compile Include="LeetAgain\IncreasingTripletSln.cs" />
     <Compile Include="LeetAgain\IsIsomorphicSln.cs" />
     <Compile Include="LeetAgain\IsPalindromeSln.cs" />
     <Compile Include="LeetAgain\LengthLongestPathSln.cs" />
     <Compile Include="LeetAgain\LicenseKeyFormattingSln.cs" />
+    <Compile Include="LeetAgain\MatrixReshapeSln.cs" />
     <Compile Include="LeetAgain\MaxProductSln.cs" />
     <Compile Include="LeetAgain\MaxProfitII.cs" />
     <Compile Include="LeetAgain\MaxProfitSln.cs" />
@@ -183,7 +186,6 @@
     <Content Include="bin\Debug\LeetCode.vshost.exe" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="app.config" />
     <None Include="bin\Debug\LeetCode.vshost.exe.manifest" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
   </ItemGroup>

@@ -1,46 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
-using LeetCode.Leets;
 
 namespace LeetCode.LeetAgain
 {
-    class FindKthLargestSln : ISolution
+    public class ArrayPairSumSln : ISolution
     {
-
-        //todo: use heap sort
-
-        public int FindKthLargest(int[] nums, int k)
+        public int ArrayPairSum(int[] nums)
         {
-            //            QuickSort(nums,0,nums.Length-1);
-            //            return nums[k-1];
-
-            int start = 0;
-            int end = nums.Length - 1;
-
-            while (true)
+            //1. sort
+            //2. sum odd index item
+            Array.Sort(nums);
+            int result = 0;
+            for (int i = 0; i < nums.Length; i += 2)
             {
-                int position = Partition(nums, start, end);
-
-                if (position == k - 1) return nums[k - 1];
-                if (position > k - 1)
-                {
-                    end = position - 1;
-                }
-                else
-                {
-                    start = position + 1;
-                }
+                result += nums[i];
             }
+            return result;
         }
 
 
         void QuickSort(int[] nums, int fromIndex, int toIndex)
         {
-
             if (fromIndex < toIndex)
             {
                 //partion
@@ -77,9 +56,8 @@ namespace LeetCode.LeetAgain
 
         public void Execute()
         {
-            int[] arr = { 1 ,2,3,4,6,78,33,2,22};
-            Console.WriteLine(FindKthLargest(arr, 4));
-            ;
+            int[] arr = new[] { 1, 1 };
+            QuickSort(arr, 0, arr.Length - 1);
         }
     }
 }
