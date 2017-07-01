@@ -1,4 +1,5 @@
 using LeetCode.LeetAgain;
+using System;
 
 namespace LeetCode
 {
@@ -6,9 +7,10 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
+
             try
             {
-                ISolution sln = new DecodeStringSln();
+                ISolution sln = new MatrixReshapeSln();
                 sln.Execute();
             }
             catch (System.Exception ex)
@@ -16,6 +18,8 @@ namespace LeetCode
                 System.Console.WriteLine(ex.Message);
                 System.Console.WriteLine(ex.StackTrace);
             }
+
+            Console.ReadLine();
         }
     }
 }
