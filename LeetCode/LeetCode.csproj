@@ -54,6 +54,7 @@
     <Compile Include="LeetAgain\ArrayPairSumSln.cs" />
     <Compile Include="LeetAgain\CanCompleteCircuitSln.cs" />
     <Compile Include="LeetAgain\CompareVersionSln.cs" />
+    <Compile Include="LeetAgain\CountNumbersWithUniqueDigitsSln.cs" />
     <Compile Include="LeetAgain\DecodeString.cs" />
     <Compile Include="LeetAgain\FindAnagramsSln.cs" />
     <Compile Include="LeetAgain\FindDuplicateSln.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="LeetAgain\MyStack.cs" />
     <Compile Include="LeetAgain\NextGreaterElementSln.cs" />
     <Compile Include="LeetAgain\NumArraySln.cs" />
+    <Compile Include="LeetAgain\NumberOfBoomerangsSln.cs" />
     <Compile Include="LeetAgain\ProductExceptSelfSln.cs" />
     <Compile Include="LeetAgain\ReadBinaryWatchSln.cs" />
     <Compile Include="LeetAgain\RemoveDuplicatesSln.cs" />
