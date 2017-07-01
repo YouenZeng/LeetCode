@@ -10,7 +10,7 @@ namespace LeetCode
 
             try
             {
-                ISolution sln = new MatrixReshapeSln();
+                ISolution sln = new NumberOfBoomerangsSln();
                 sln.Execute();
             }
             catch (System.Exception ex)
