@@ -73,6 +73,7 @@
     <Compile Include="LeetAgain\MaxProfitSln.cs" />
     <Compile Include="LeetAgain\MaxProfitWithCoolDownSln.cs" />
     <Compile Include="LeetAgain\MaxSubArraySln.cs" />
+    <Compile Include="LeetAgain\MergeIntervalsSln.cs" />
     <Compile Include="LeetAgain\MinimumTotalSln.cs" />
     <Compile Include="LeetAgain\MissingNumberSln.cs" />
     <Compile Include="LeetAgain\MyQueue.cs" />
