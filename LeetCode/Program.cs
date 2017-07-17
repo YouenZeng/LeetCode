@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new MinStack();
+            ISolution sln = new WordBreakSln();
             sln.Execute();
 
             Console.ReadLine();
