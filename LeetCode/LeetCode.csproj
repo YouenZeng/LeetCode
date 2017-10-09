@@ -123,6 +123,7 @@
     <Compile Include="LeetAgain\ThirdMaxSln.cs" />
     <Compile Include="LeetAgain\TwoSumOneSln.cs" />
     <Compile Include="LeetAgain\TwoSumSln.cs" />
+    <Compile Include="LeetAgain\WordBreakSln.cs" />
     <Compile Include="LeetAgain\WordPatternSln.cs" />
     <Compile Include="Leets\AddBinarySln.cs" />
     <Compile Include="Leets\AddDigitsSln.cs" />
