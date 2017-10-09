@@ -89,7 +89,9 @@
     <Compile Include="LeetAgain\IncreasingTripletSln.cs" />
     <Compile Include="LeetAgain\IsIsomorphicSln.cs" />
     <Compile Include="LeetAgain\IsPalindromeSln.cs" />
+    <Compile Include="LeetAgain\LargestDivisibleSubset.cs" />
     <Compile Include="LeetAgain\LengthLongestPathSln.cs" />
+    <Compile Include="LeetAgain\LevelOrderBottomSln.cs" />
     <Compile Include="LeetAgain\LicenseKeyFormattingSln.cs" />
     <Compile Include="LeetAgain\MatrixReshapeSln.cs" />
     <Compile Include="LeetAgain\MaxProductSln.cs" />
@@ -120,6 +122,7 @@
     <Compile Include="LeetAgain\SearchMatrixSlnNew.cs" />
     <Compile Include="LeetAgain\StrStrSln.cs" />
     <Compile Include="LeetAgain\SubsetsSln.cs" />
+    <Compile Include="LeetAgain\SymmetricTreeSln.cs" />
     <Compile Include="LeetAgain\ThirdMaxSln.cs" />
     <Compile Include="LeetAgain\TwoSumOneSln.cs" />
     <Compile Include="LeetAgain\TwoSumSln.cs" />
