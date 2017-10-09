@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new WordBreakSln();
+            ISolution sln = new RangeBitwiseAndSln();
             sln.Execute();
 
             Console.ReadLine();
