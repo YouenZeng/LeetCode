@@ -91,6 +91,7 @@
     <Compile Include="LeetAgain\IsPalindromeSln.cs" />
     <Compile Include="LeetAgain\LengthLongestPathSln.cs" />
     <Compile Include="LeetAgain\LicenseKeyFormattingSln.cs" />
+    <Compile Include="LeetAgain\MajorityElementSln.cs" />
     <Compile Include="LeetAgain\MatrixReshapeSln.cs" />
     <Compile Include="LeetAgain\MaxProductSln.cs" />
     <Compile Include="LeetAgain\MaxProfitII.cs" />
@@ -123,7 +124,6 @@
     <Compile Include="LeetAgain\ThirdMaxSln.cs" />
     <Compile Include="LeetAgain\TwoSumOneSln.cs" />
     <Compile Include="LeetAgain\TwoSumSln.cs" />
-    <Compile Include="LeetAgain\WordBreakSln.cs" />
     <Compile Include="LeetAgain\WordPatternSln.cs" />
     <Compile Include="Leets\AddBinarySln.cs" />
     <Compile Include="Leets\AddDigitsSln.cs" />
