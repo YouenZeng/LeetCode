@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>LeetCode</RootNamespace>
     <AssemblyName>LeetCode</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
   </PropertyGroup>
@@ -97,7 +97,9 @@
     <Compile Include="LeetAgain\MaxProfitSln.cs" />
     <Compile Include="LeetAgain\MaxProfitWithCoolDownSln.cs" />
     <Compile Include="LeetAgain\MaxSubArraySln.cs" />
+    <Compile Include="LeetAgain\MergeIntervalsSln.cs" />
     <Compile Include="LeetAgain\MinimumTotalSln.cs" />
+    <Compile Include="LeetAgain\MinStackSln.cs" />
     <Compile Include="LeetAgain\MissingNumberSln.cs" />
     <Compile Include="LeetAgain\MyQueue.cs" />
     <Compile Include="LeetAgain\MyStack.cs" />
@@ -105,6 +107,7 @@
     <Compile Include="LeetAgain\NumArraySln.cs" />
     <Compile Include="LeetAgain\NumberOfBoomerangsSln.cs" />
     <Compile Include="LeetAgain\ProductExceptSelfSln.cs" />
+    <Compile Include="LeetAgain\RangeBitwiseAndSln.cs" />
     <Compile Include="LeetAgain\ReadBinaryWatchSln.cs" />
     <Compile Include="LeetAgain\RemoveDuplicatesSln.cs" />
     <Compile Include="LeetAgain\RemoveElementSln.cs" />
@@ -212,6 +215,7 @@
     <Content Include="bin\Debug\LeetCode.vshost.exe" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="app.config" />
     <None Include="bin\Debug\LeetCode.vshost.exe.manifest" />
     <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <None Include="packages.config" />
