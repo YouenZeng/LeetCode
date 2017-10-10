@@ -77,7 +77,9 @@
     <Compile Include="ISolution.cs" />
     <Compile Include="LeetAgain\ArrayPairSumSln.cs" />
     <Compile Include="LeetAgain\CanCompleteCircuitSln.cs" />
+    <Compile Include="LeetAgain\ClimbStairsSln.cs" />
     <Compile Include="LeetAgain\CompareVersionSln.cs" />
+    <Compile Include="LeetAgain\CountBitsSln.cs" />
     <Compile Include="LeetAgain\CountNumbersWithUniqueDigitsSln.cs" />
     <Compile Include="LeetAgain\DecodeString.cs" />
     <Compile Include="LeetAgain\FindAnagramsSln.cs" />
