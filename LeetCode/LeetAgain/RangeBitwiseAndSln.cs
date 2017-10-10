@@ -20,6 +20,7 @@ namespace LeetCode.LeetAgain
                 moveFactor <<= 1;
             }
             return m * moveFactor;
+
         }
 
 

@@ -94,6 +94,7 @@
     <Compile Include="LeetAgain\LengthLongestPathSln.cs" />
     <Compile Include="LeetAgain\LevelOrderBottomSln.cs" />
     <Compile Include="LeetAgain\LicenseKeyFormattingSln.cs" />
+    <Compile Include="LeetAgain\MajorityElementSln.cs" />
     <Compile Include="LeetAgain\MatrixReshapeSln.cs" />
     <Compile Include="LeetAgain\MaxProductSln.cs" />
     <Compile Include="LeetAgain\MaxProfitII.cs" />
