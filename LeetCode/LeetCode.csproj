@@ -90,6 +90,7 @@
     <Compile Include="LeetAgain\IncreasingTripletSln.cs" />
     <Compile Include="LeetAgain\IsIsomorphicSln.cs" />
     <Compile Include="LeetAgain\IsPalindromeSln.cs" />
+    <Compile Include="LeetAgain\KSmallestPairsSln.cs" />
     <Compile Include="LeetAgain\LargestDivisibleSubset.cs" />
     <Compile Include="LeetAgain\LengthLongestPathSln.cs" />
     <Compile Include="LeetAgain\LevelOrderBottomSln.cs" />
