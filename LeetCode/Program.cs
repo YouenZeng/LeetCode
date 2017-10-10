@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new RangeBitwiseAndSln();
+            ISolution sln = new FindTargetSumWaysSln();
             sln.Execute();
 
             Console.ReadLine();
