@@ -83,6 +83,7 @@
     <Compile Include="LeetAgain\FindAnagramsSln.cs" />
     <Compile Include="LeetAgain\FindDuplicateSln.cs" />
     <Compile Include="LeetAgain\FindKthLargestSln.cs" />
+    <Compile Include="LeetAgain\FindTargetSumWaysSln.cs" />
     <Compile Include="LeetAgain\FirstUniqCharSln.cs" />
     <Compile Include="LeetAgain\HammingDistanceSln.cs" />
     <Compile Include="LeetAgain\HammingWeightSln.cs" />

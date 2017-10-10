@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new LevelOrderBottomSln();
+            ISolution sln = new FindTargetSumWaysSln();
             sln.Execute();
 
             Console.ReadLine();
