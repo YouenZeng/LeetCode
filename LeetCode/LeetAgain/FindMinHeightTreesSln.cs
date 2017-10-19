@@ -10,7 +10,7 @@ namespace LeetCode.LeetAgain
     {
         public IList<int> FindMinHeightTrees(int n, int[,] edges)
         {
-
+            throw new NotImplementedException();
         }
         public void Execute()
         {
