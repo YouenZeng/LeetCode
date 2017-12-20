@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeetCode.LeetAgain
 {
@@ -10,6 +7,10 @@ namespace LeetCode.LeetAgain
     {
         public IList<int> FindMinHeightTrees(int n, int[,] edges)
         {
+            //restart this after 2 months.
+
+            //https://leetcode.com/problems/minimum-height-trees/description/
+
             throw new NotImplementedException();
         }
         public void Execute()
