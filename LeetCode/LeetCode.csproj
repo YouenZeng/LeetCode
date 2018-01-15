@@ -1,12 +1,237 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
-
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0562B123-549B-4A81-82DF-900BB722FE31}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>LeetCode</RootNamespace>
+    <AssemblyName>LeetCode</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
-
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Properties\" />
+    <Reference Include="Hangfire.Core, Version=1.6.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Hangfire.Core.1.6.14\lib\net45\Hangfire.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Hangfire.SqlServer, Version=1.6.14.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Hangfire.SqlServer.1.6.14\lib\net45\Hangfire.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.3.0.0\lib\net45\Microsoft.Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Owin.Host.SystemWeb, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Owin.Host.SystemWeb.3.0.0\lib\net45\Microsoft.Owin.Host.SystemWeb.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.5.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Owin, Version=1.0.0.0, Culture=neutral, PublicKeyToken=f0ebd12fd5e55cc5, processorArchitecture=MSIL">
+      <HintPath>packages\Owin.1.0\lib\net40\Owin.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
-
+  <ItemGroup>
+    <Compile Include="Algorithm\BuildingWall.cs" />
+    <Compile Include="Algorithm\EightQueen.cs" />
+    <Compile Include="Algorithm\PackProblem.cs" />
+    <Compile Include="BoxTest.cs" />
+    <Compile Include="Dp\DpLearn.cs" />
+    <Compile Include="Infra\AllSort.cs" />
+    <Compile Include="Infra\MajorityVote.cs" />
+    <Compile Include="ISolution.cs" />
+    <Compile Include="LeetAgain\ArrayPairSumSln.cs" />
+    <Compile Include="LeetAgain\CanCompleteCircuitSln.cs" />
+    <Compile Include="LeetAgain\CompareVersionSln.cs" />
+    <Compile Include="LeetAgain\CountNumbersWithUniqueDigitsSln.cs" />
+    <Compile Include="LeetAgain\DecodeString.cs" />
+    <Compile Include="LeetAgain\DetectCycleSln.cs" />
+    <Compile Include="LeetAgain\FindAnagramsSln.cs" />
+    <Compile Include="LeetAgain\FindDuplicateSln.cs" />
+    <Compile Include="LeetAgain\FindKthLargestSln.cs" />
+    <Compile Include="LeetAgain\FirstUniqCharSln.cs" />
+    <Compile Include="LeetAgain\HammingDistanceSln.cs" />
+    <Compile Include="LeetAgain\HammingWeightSln.cs" />
+    <Compile Include="LeetAgain\HasCycleSln.cs" />
+    <Compile Include="LeetAgain\IncreasingTripletSln.cs" />
+    <Compile Include="LeetAgain\IsIsomorphicSln.cs" />
+    <Compile Include="LeetAgain\IsPalindromeSln.cs" />
+    <Compile Include="LeetAgain\LengthLongestPathSln.cs" />
+    <Compile Include="LeetAgain\LicenseKeyFormattingSln.cs" />
+    <Compile Include="LeetAgain\MajorityElementSln.cs" />
+    <Compile Include="LeetAgain\MatrixReshapeSln.cs" />
+    <Compile Include="LeetAgain\MaxProductSln.cs" />
+    <Compile Include="LeetAgain\MaxProfitII.cs" />
+    <Compile Include="LeetAgain\MaxProfitSln.cs" />
+    <Compile Include="LeetAgain\MaxProfitWithCoolDownSln.cs" />
+    <Compile Include="LeetAgain\MaxSubArraySln.cs" />
+    <Compile Include="LeetAgain\MergeIntervalsSln.cs" />
+    <Compile Include="LeetAgain\MinimumTotalSln.cs" />
+    <Compile Include="LeetAgain\MinStackSln.cs" />
+    <Compile Include="LeetAgain\MissingNumberSln.cs" />
+    <Compile Include="LeetAgain\MyQueue.cs" />
+    <Compile Include="LeetAgain\MyStack.cs" />
+    <Compile Include="LeetAgain\NextGreaterElementSln.cs" />
+    <Compile Include="LeetAgain\NumArraySln.cs" />
+    <Compile Include="LeetAgain\NumberOfBoomerangsSln.cs" />
+    <Compile Include="LeetAgain\ProductExceptSelfSln.cs" />
+    <Compile Include="LeetAgain\RangeBitwiseAndSln.cs" />
+    <Compile Include="LeetAgain\ReadBinaryWatchSln.cs" />
+    <Compile Include="LeetAgain\RemoveDuplicatesSln.cs" />
+    <Compile Include="LeetAgain\RemoveElementSln.cs" />
+    <Compile Include="LeetAgain\RestoreIpAddressesDfsSln.cs" />
+    <Compile Include="LeetAgain\RestoreIpAddressesSln.cs" />
+    <Compile Include="LeetAgain\ReverseWordsSln.cs" />
+    <Compile Include="LeetAgain\RobSln.cs" />
+    <Compile Include="LeetAgain\SearchMatrix2D.cs" />
+    <Compile Include="LeetAgain\SearchMatrixSln.cs" />
+    <Compile Include="LeetAgain\SearchMatrixSlnNew.cs" />
+    <Compile Include="LeetAgain\StrStrSln.cs" />
+    <Compile Include="LeetAgain\SubsetsSln.cs" />
+    <Compile Include="LeetAgain\ThirdMaxSln.cs" />
+    <Compile Include="LeetAgain\TwoSumOneSln.cs" />
+    <Compile Include="LeetAgain\TwoSumSln.cs" />
+    <Compile Include="LeetAgain\WordPatternSln.cs" />
+    <Compile Include="Leets\AddBinarySln.cs" />
+    <Compile Include="Leets\AddDigitsSln.cs" />
+    <Compile Include="Leets\CandySln.cs" />
+    <Compile Include="Leets\CanWinNimSln.cs" />
+    <Compile Include="Leets\ClimbingStairsSln.cs" />
+    <Compile Include="Leets\CompareVersionSln.cs" />
+    <Compile Include="Leets\ComputeAreaSln.cs" />
+    <Compile Include="Leets\ContainsDuplicateSln.cs" />
+    <Compile Include="Leets\ContainsNearbyDuplicateSln.cs" />
+    <Compile Include="Leets\ConvertToTitleSln.cs" />
+    <Compile Include="Leets\CountAndSaySln.cs" />
+    <Compile Include="Leets\DeleteDuplicatesSln.cs" />
+    <Compile Include="Leets\DeleteDuplicatesTwo.cs" />
+    <Compile Include="Leets\DeleteNodeSln.cs" />
+    <Compile Include="Leets\FindKthLargest.cs" />
+    <Compile Include="Leets\FirstBadVersionSln.cs" />
+    <Compile Include="Leets\GetIntersectionNodeSln.cs" />
+    <Compile Include="Leets\HasPathSumSln.cs" />
+    <Compile Include="Leets\HouseRobberSln.cs" />
+    <Compile Include="Leets\InvertTree.cs" />
+    <Compile Include="Leets\IsAnagramSln.cs" />
+    <Compile Include="Leets\IsHappySln.cs" />
+    <Compile Include="Leets\IsPalindromeSln.cs" />
+    <Compile Include="Leets\IsPowerOfThreeSln.cs" />
+    <Compile Include="Leets\IsPowerOfTwoSln.cs" />
+    <Compile Include="Leets\IsSymmetricSln.cs" />
+    <Compile Include="Leets\IsUglySln.cs" />
+    <Compile Include="Leets\IsValidSln.cs" />
+    <Compile Include="Leets\IsValidSudokuSln.cs" />
+    <Compile Include="Leets\LengthOfLastWordSln.cs" />
+    <Compile Include="Leets\LetterCountSln.cs" />
+    <Compile Include="Leets\LevelOrderBottomSln.cs" />
+    <Compile Include="Leets\LevelOrderSln.cs" />
+    <Compile Include="Leets\LongestCommonPrefixSln.cs" />
+    <Compile Include="Leets\LongestConsecutiveSln.cs" />
+    <Compile Include="Leets\LongestValidParenthesesSln.cs" />
+    <Compile Include="Leets\LowestCommonAncestorSln.cs" />
+    <Compile Include="Leets\MajorityElementSln.cs" />
+    <Compile Include="Leets\MaxDepthSln.cs" />
+    <Compile Include="Leets\MaximalSquareSln.cs" />
+    <Compile Include="Leets\MaxProfitIIISln.cs" />
+    <Compile Include="Leets\MaxProfitIISln.cs" />
+    <Compile Include="Leets\MaxProfitSln.cs" />
+    <Compile Include="Leets\MaxSubArrayLsn.cs" />
+    <Compile Include="Leets\MaxSubarrSln.cs" />
+    <Compile Include="Leets\MergeSortedArraySln.cs" />
+    <Compile Include="Leets\MergeTwoListsSln.cs" />
+    <Compile Include="Leets\MinDepthSln.cs" />
+    <Compile Include="Leets\MinimumTotalSln.cs" />
+    <Compile Include="Leets\MyAtoiSln.cs" />
+    <Compile Include="Leets\NumDistinctSln.cs" />
+    <Compile Include="Leets\NumSquaresSln.cs" />
+    <Compile Include="Leets\PascalTriangleIISln.cs" />
+    <Compile Include="Leets\PascalTriangleSln.cs" />
+    <Compile Include="Leets\PlusOneSln.cs" />
+    <Compile Include="Leets\QueueSln.cs" />
+    <Compile Include="Leets\QuickSortSln.cs" />
+    <Compile Include="Leets\RangeBitwiseAndSln.cs" />
+    <Compile Include="Leets\RemoveDuplicates.cs" />
+    <Compile Include="Leets\RemoveNthFromEndSln.cs" />
+    <Compile Include="Leets\ReverseBitSln.cs" />
+    <Compile Include="Leets\ReverseInt.cs" />
+    <Compile Include="Leets\ReverseListSln.cs" />
+    <Compile Include="Leets\ReverseWord.cs" />
+    <Compile Include="Leets\RomanToIntSln.cs" />
+    <Compile Include="Leets\RotateArray.cs" />
+    <Compile Include="Leets\RotateSln.cs" />
+    <Compile Include="Leets\ScrambleStringSln.cs" />
+    <Compile Include="Leets\SearchInsert.cs" />
+    <Compile Include="Leets\SearchMatrixSln.cs" />
+    <Compile Include="Leets\SingleNumberIIISln.cs" />
+    <Compile Include="Leets\SingleNumberSln.cs" />
+    <Compile Include="Leets\Solution.cs" />
+    <Compile Include="Leets\StackSln.cs" />
+    <Compile Include="Leets\SubsetsSln.cs" />
+    <Compile Include="Leets\SummaryRangesSln.cs" />
+    <Compile Include="Leets\ThreeSumSln.cs" />
+    <Compile Include="Leets\TitleToNumberSln.cs" />
+    <Compile Include="Leets\TrailingZeroesSln.cs" />
+    <Compile Include="Leets\TreeNodeLeet.cs" />
+    <Compile Include="Leets\TwoSumSln.cs" />
+    <Compile Include="Leets\WordLadderSolution.cs" />
+    <Compile Include="Leets\WordPatternSln.cs" />
+    <Compile Include="Leets\ZigzagConvert.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\LeetCode.vshost.exe" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="bin\Debug\LeetCode.vshost.exe.manifest" />
+    <None Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\Debug\TempPE\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>
