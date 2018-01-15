@@ -11,28 +11,34 @@ namespace LeetCode.LeetAgain
     /// </summary>
     public class BSTIterator : ISolution
     {
+        Stack<TreeNode> treeStack = new Stack<TreeNode>();
 
-        TreeNode currentRoot;
         public BSTIterator(TreeNode root)
         {
-            currentRoot = root;
+            FullfillStack(root);
         }
 
         /** @return whether we have a next smallest number */
         public bool HasNext()
         {
-            return currentRoot.left != null;
+            return treeStack.Count > 0;
         }
 
         /** @return the next smallest number */
         public int Next()
         {
-            if (HasNext())
+            TreeNode popNode = treeStack.Pop();
+            FullfillStack(popNode.right);
+            return popNode.val;
+        }
+
+        private void FullfillStack(TreeNode treeNode)
+        {
+            while (treeNode != null)
             {
-                BSTIterator inner = new BSTIterator(currentRoot.left);
-                return inner.Next();
+                treeStack.Push(treeNode);
+                treeNode = treeNode.left;
             }
-            return currentRoot.val;
         }
         public void Execute()
         {
