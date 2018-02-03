@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace LeetCode
 {
@@ -13,11 +9,11 @@ namespace LeetCode
             int i = 5;
             object obj = i;
             IFormattable ftt = i;
-            Console.WriteLine(System.Object.ReferenceEquals(i, obj));
-            Console.WriteLine(System.Object.ReferenceEquals(i, ftt));
-            Console.WriteLine(System.Object.ReferenceEquals(ftt, obj));
-            Console.WriteLine(System.Object.ReferenceEquals(i, (int)obj));
-            Console.WriteLine(System.Object.ReferenceEquals(i, (int)ftt));
+            Console.WriteLine(ReferenceEquals(i, obj));
+            Console.WriteLine(ReferenceEquals(i, ftt));
+            Console.WriteLine(ReferenceEquals(ftt, obj));
+            Console.WriteLine(ReferenceEquals(i, (int)obj));
+            Console.WriteLine(ReferenceEquals(i, (int)ftt));
         }
     }
 }
