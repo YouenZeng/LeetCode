@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new AddBinarySln();
+            ISolution sln = new InsertIntervalSln();
             sln.Execute();
 
             Console.ReadLine();

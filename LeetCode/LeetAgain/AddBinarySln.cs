@@ -1,7 +1,36 @@
 using System;
+using System.Collections.Generic;
+using System.Text;
 using LeetCode;
 public class AddBinarySln : ISolution
 {
+
+    public string AddBinaryV2(string a, string b)
+    {
+        int m = a.Length - 1;
+        int n = b.Length - 1;
+
+        int carry = 0;
+        StringBuilder sb = new StringBuilder();
+        while (m >= 0 || n >= 0)
+        {
+            int sum = carry;
+            if (m >= 0)
+                sum += a[m--] - '0';
+
+            if (n >= 0)
+                sum += b[n--] - '0';
+
+            sb.Append(sum % 2);
+            carry = sum / 2;
+        }
+        if (carry != 0) sb.Append(carry);
+
+        var arr = sb.ToString().ToCharArray();
+        Array.Reverse(arr);
+        return new string(arr);
+    }
+
     public string AddBinary(string a, string b)
     {
         int binaryLength = Math.Max(a.Length, b.Length);
@@ -26,6 +55,7 @@ public class AddBinarySln : ISolution
 
         string result = string.Empty;
         char overflowChar = '0';
+
         for (int i = binaryLength - 1; i >= 0; i--)
         {
             char charA = '0';
