@@ -8,8 +8,8 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            //ISolution sln = new ClimbStairsSln();
-            //sln.Execute();
+            ISolution sln = new AddBinarySln();
+            sln.Execute();
 
             Console.ReadLine();
         }
