@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new InsertIntervalSln();
+            ISolution sln = new MinCostClimbingStairsSln();
             sln.Execute();
 
             Console.ReadLine();
