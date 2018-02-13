@@ -42,8 +42,6 @@ namespace LeetCode.LeetAgain
                 }
             }
 
-            throw new NotImplementedException();
-
             return sb.ToString();
         }
         public void Execute()

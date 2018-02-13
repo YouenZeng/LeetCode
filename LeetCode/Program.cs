@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new MinCostClimbingStairsSln();
+            ISolution sln = new CountSubstringsSln();
             sln.Execute();
 
             Console.ReadLine();
