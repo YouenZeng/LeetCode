@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new CountSubstringsSln();
+            ISolution sln = new NumDecodingsSln();
             sln.Execute();
 
             Console.ReadLine();
