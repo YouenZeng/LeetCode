@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new NumDecodingsSln();
+            ISolution sln = new IntegerBreakSln();
             sln.Execute();
 
             Console.ReadLine();
