@@ -23,7 +23,7 @@ namespace LeetCode.LeetAgain
             //return IntegerBrakerInternal(n, cache);
         }
 
-        public int IntegerBreak(int n)
+        public int IntegerBreak2(int n)
         {
             int[] cache = new int[n + 1];
             cache[0] = 1;
