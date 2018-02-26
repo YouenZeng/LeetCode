@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new IntegerBreakSln();
+            ISolution sln = new FindMaxFormSln();
             sln.Execute();
 
             Console.ReadLine();
