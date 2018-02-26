@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new CountBits2Sln();
+            ISolution sln = new PredictTheWinnerSln();
             sln.Execute();
 
             Console.ReadLine();
