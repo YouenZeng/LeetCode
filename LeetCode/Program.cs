@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new PredictTheWinnerSln();
+            ISolution sln = new MaxProfit2Sln();
             sln.Execute();
 
             Console.ReadLine();
