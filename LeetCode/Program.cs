@@ -8,7 +8,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new MaxProfit2Sln();
+            ISolution sln = new LengthOfLongestSubstringSln();
             sln.Execute();
 
             Console.ReadLine();
