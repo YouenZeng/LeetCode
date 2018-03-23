@@ -9,7 +9,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new LengthOfLongestSubstringSln();
+            ISolution sln = new GetMinimumDifferenceSln();
             sln.Execute();
 
             Console.ReadLine();
