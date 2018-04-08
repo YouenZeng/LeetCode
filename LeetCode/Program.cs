@@ -8,8 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-
-            ISolution sln = new GetMinimumDifferenceSln();
+            ISolution sln = new MaximumProductSln();
             sln.Execute();
 
             Console.ReadLine();
