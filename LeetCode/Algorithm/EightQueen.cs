@@ -1,37 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using LeetCode.Leets;
 
 namespace LeetCode.Algorithm
 {
-    class EightQueen 
+    class EightQueen
     {
-
         private static bool IsConsistend(int[] q, int n)
         {
             for (int i = 0; i < n; i++)
             {
                 if (q[i] == q[n]) return false;
-                if ((q[i] - q[n]) == (n - i)) return false;
-                if ((q[n] - q[i]) == (n - i)) return false;
+                if (q[i] - q[n] == n - i) return false;
+                if (q[n] - q[i] == n - i) return false;
             }
-            return true;
-        }
-        private static bool IsConsistend2(int[] q, int n)
-        {
-            for (int i = 1; i < n; i++)
-            {
-                if (q[i] == q[n]) return false;
-                if ((q[i] - q[n]) == (n - i)) return false;
-                if ((q[n] - q[i]) == (n - i)) return false;
-            }
+
             return true;
         }
 
         private static int countEnum = 0;
+
         private static void PrintQueens(int[] q)
         {
             countEnum++;
@@ -42,7 +28,12 @@ namespace LeetCode.Algorithm
             int[] a = new int[N];
             Enumerate(a, 0);
         }
-
+        
+        /// <summary>
+        /// Recursive 
+        /// </summary>
+        /// <param name="q"></param>
+        /// <param name="n"></param>
         private static void Enumerate(int[] q, int n)
         {
             int N = q.Length;
@@ -70,9 +61,11 @@ namespace LeetCode.Algorithm
             a[k] = 1;
             while (k > 0)
             {
+                // k<=n 是否越界
+                // a[k]<=n 是否探索完毕所有该层内容
                 if (k <= n && a[k] <= n)
                 {
-                    if (IsConsistend2(a, k))
+                    if (IsConsistend(a, k))
                     {
                         //可以放置，去下一行
                         k++;
@@ -82,7 +75,6 @@ namespace LeetCode.Algorithm
                     {
                         //不能放置，跳转到下一列
                         a[k]++;
-
                     }
                 }
                 else
@@ -92,6 +84,7 @@ namespace LeetCode.Algorithm
                     {
                         count++;
                     }
+
                     //退回上一步
                     k--;
                     //试探下一个位置
