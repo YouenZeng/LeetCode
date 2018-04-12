@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LetterCasePermutationSln();
+            ISolution sln = new FloodFillSln();
             sln.Execute();
 
             Console.ReadLine();

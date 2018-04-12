@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LeetCode.LeetAgain
 {
@@ -38,7 +37,8 @@ namespace LeetCode.LeetAgain
 
         public void Execute()
         {
-            LetterCasePermutation("1aB23");
+            Console.WriteLine(LetterCasePermutation("1aB23"));
+            
         }
     }
 }
