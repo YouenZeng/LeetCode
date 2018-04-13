@@ -12,6 +12,7 @@ namespace LeetCode.LeetAgain
 
         public int[,] FloodFill(int[,] image, int sr, int sc, int newColor)
         {
+            //TODO: use BFS
             _fullFilled = image[sr, sc];
             _imageWidth = image.GetLength(0);
             _imageHeight = image.GetLength(1);
