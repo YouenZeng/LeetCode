@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FloodFillSln();
+            ISolution sln = new FindBottomLeftValueSln();
             sln.Execute();
 
             Console.ReadLine();
