@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new MinimumDeleteSumSln();
+            ISolution sln = new CombinationSum4Sln();
             sln.Execute();
 
             Console.ReadLine();
