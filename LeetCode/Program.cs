@@ -14,6 +14,5 @@ namespace LeetCode
 
             Console.ReadLine();
         }
-    }
 }
-
+}

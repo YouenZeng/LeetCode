@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Reflection;
+using System.Linq;
 using System.Text;
 
 namespace LeetCode.LeetAgain
@@ -9,20 +9,29 @@ namespace LeetCode.LeetAgain
     {
         public int FindLongestChain(int[,] pairs)
         {
-            // select jpari in any order
-            int length = pairs.GetLength(1);
+            Array.Sort(pairs);
 
-            for (int i = 0; i < length; i++)
+            int[] cache = new int[pairs.GetLength(1)];
+
+            for (int i = 0; i < pairs.Length; i++)
             {
-
+                for (int j = 0; j < i; j++)
+                {
+                    cache[i] = Math.Max(cache[i], pairs[i, 0] > pairs[j, 1] ? cache[j] + 1 : cache[j]);
+                }
             }
 
-            throw new NotImplementedException();
+            return cache[pairs.GetLength(1) - 1];
         }
 
         public void Execute()
         {
-            throw new NotImplementedException();
+            FindLongestChain(new int[3, 2]
+            {
+                {1, 2},
+                {2, 3},
+                {3, 4}
+            });
         }
     }
 }
