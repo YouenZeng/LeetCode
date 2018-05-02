@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CombinationSum4Sln();
+            ISolution sln = new LevelOrderSln();
             sln.Execute();
 
             Console.ReadLine();
