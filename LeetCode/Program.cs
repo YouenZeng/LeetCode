@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LevelOrderSln();
+            ISolution sln = new FindLengthOfLCISSln();
             sln.Execute();
 
             Console.ReadLine();
