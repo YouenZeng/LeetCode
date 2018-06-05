@@ -1,4 +1,3 @@
 # LeetCode
 
-A notebook for my solutions for LeetCode. Using C# language.
-Leet progress 41/400
+A notebook for my solutions for LeetCode. Using C# and Python3 language.
