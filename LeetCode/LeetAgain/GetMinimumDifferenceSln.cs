@@ -6,21 +6,36 @@ namespace LeetCode.LeetAgain
     class GetMinimumDifferenceSln : ISolution
     {
         int minDiff = int.MaxValue;
-        TreeNode prev;
+        TreeNode prevNode;
         public int GetMinimumDifference(TreeNode root)
         {
-            inorder(root);
+            if (root == null) return minDiff;
+
+            GetMinimumDifference(root.left);
+
+            if (prevNode != null)
+            {
+                minDiff = Math.Min(minDiff, root.val - prevNode.val);
+            }
+            prevNode = root;
+            GetMinimumDifference(root.right);
+
             return minDiff;
         }
 
-        public void inorder(TreeNode root)
-        {
-            if (root == null) return;
-            inorder(root.left);
-            if (prev != null) minDiff = Math.Min(minDiff, root.val - prev.val);
-            prev = root;
-            inorder(root.right);
-        }
+        //private int FindMin(TreeNode root)
+        //{
+        //    if (root == null) return int.MaxValue;
+        //    if (root.left == null && root.right == null) return root.val;
+        //    return Math.Min(Math.Min(root.val, FindMin(root.left)), FindMin(root.right));
+        //}
+
+        //private int FindMax(TreeNode root)
+        //{
+        //    if (root == null) return int.MinValue;
+        //    if (root.left == null && root.right == null) return root.val;
+        //    return Math.Max(Math.Max(root.val, FindMax(root.left)), FindMax(root.right));
+        //}
 
         public void Execute()
         {
@@ -32,7 +47,7 @@ namespace LeetCode.LeetAgain
                     {
                         right = new TreeNode(215)
                         {
-                            right = new TreeNode(745)
+                            right = new TreeNode(216)
                         }
                     }
 

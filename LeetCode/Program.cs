@@ -1,5 +1,6 @@
 using LeetCode.Infra;
 using LeetCode.LeetAgain;
+using LeetCode.Leets;
 using System;
 using System.Diagnostics;
 
@@ -9,10 +10,10 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindMinSln();
+            ISolution sln = new InorderTraversalSln();
             sln.Execute();
 
             Console.ReadLine();
         }
-}
+    }
 }
