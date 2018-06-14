@@ -5,6 +5,7 @@ using System.Text;
 
 namespace LeetCode.LeetAgain
 {
+    //https://leetcode.com/articles/binary-tree-inorder-traversal/
     class InorderTraversalSln : ISolution
     {
         List<int> result = new List<int>();
@@ -20,6 +21,27 @@ namespace LeetCode.LeetAgain
             result.Add(root.val);
             InorderTraversal(root.right);
             return result;
+        }
+
+        public IList<int> InorderTraversalBetter(TreeNode root)
+        {
+            List<int> resultList = new List<int>();
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            TreeNode currentNode = root;
+
+            while (stack.Count > 0 || currentNode != null)
+            {
+                while (currentNode != null)
+                {
+                    stack.Push(currentNode);
+                    currentNode = currentNode.left;
+                }
+                currentNode = stack.Pop();
+                resultList.Add(currentNode.val);
+                currentNode = currentNode.right;
+
+            }
+            return resultList;
         }
 
 
@@ -55,6 +77,7 @@ namespace LeetCode.LeetAgain
                     stack.Push(currentNode.right);
                     currentNode = currentNode.right;
                 }
+
             }
 
             return result;
@@ -78,7 +101,7 @@ namespace LeetCode.LeetAgain
 
             };
 
-            InorderTraversalInterative(node);
+            InorderTraversalBetter(node);
         }
     }
 }

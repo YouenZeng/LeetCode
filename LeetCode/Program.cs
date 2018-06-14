@@ -1,8 +1,6 @@
-using LeetCode.Infra;
 using LeetCode.LeetAgain;
-using LeetCode.Leets;
 using System;
-using System.Diagnostics;
+
 
 namespace LeetCode
 {
@@ -10,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new InorderTraversalSln();
+            ISolution sln = new MyAtoiSln();
             sln.Execute();
 
             Console.ReadLine();
