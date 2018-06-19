@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new MyAtoiSln();
+            ISolution sln = new MaxAreaSln();
             sln.Execute();
 
             Console.ReadLine();
