@@ -8,12 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
             ISolution sln = new MaxAreaSln();
-=======
-
-            ISolution sln = new MoveZeroesSln();
->>>>>>> WIP
             sln.Execute();
 
             Console.ReadLine();
