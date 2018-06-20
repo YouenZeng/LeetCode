@@ -11,36 +11,46 @@ namespace LeetCode.LeetAgain
         {
             int currentMax = 0;
             HashSet<char> hs = new HashSet<char>();
-            int hsStartIndex = 0;
+            int[] charCache = new int[256];
             for (int i = 0; i < s.Length; i++)
             {
                 if (hs.Add(s[i]) == false)
                 {
                     currentMax = Math.Max(hs.Count, currentMax);
-
-                    bool repeatFound = false;
-                    for (int j = hsStartIndex; j <= i; j++)
+                    hs.Clear();
+                    for (int j = charCache[Convert.ToInt32(s[i])] + 1; j <= i; j++)
                     {
-                        if (s[j] == s[i] && repeatFound == false)
-                        {
-                            repeatFound = true;
-                            hsStartIndex = j + 1;
-                            hs.Clear();
-                            continue;
-                        }
-                        if (repeatFound)
-                        {
-                            hs.Add(s[j]);
-                        }
+                        hs.Add(s[j]);
                     }
                 }
+                charCache[Convert.ToInt32(s[i])] = i;
             }
 
             return Math.Max(currentMax, hs.Count);
         }
+        public int LengthOfLongestSubstringV2(string s)
+        {
+            int currentMax = 0;
+            Dictionary<char, int> map = new Dictionary<char, int>();
+            for (int i = 0, j = 0; i < s.Length; i++)
+            {
+                if (map.ContainsKey(s[i]))
+                {
+                    j = Math.Max(j, map[s[i]] + 1);
+                    map[s[i]] = i;
+                }
+                else { map.Add(s[i], i); }
+
+                currentMax = Math.Max(currentMax, i - j + 1);
+            }
+
+            return currentMax;
+        }
+
+
         public void Execute()
         {
-            LengthOfLongestSubstring("abcdbfghija");
+            LengthOfLongestSubstringV2("uwevuuk");
         }
     }
 }
