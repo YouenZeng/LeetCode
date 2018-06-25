@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new MaxAreaSln();
+            ISolution sln = new Find132patternSln();
             sln.Execute();
 
             Console.ReadLine();
