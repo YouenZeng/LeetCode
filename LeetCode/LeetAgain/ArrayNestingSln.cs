@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LeetCode.LeetAgain
 {
@@ -8,7 +6,7 @@ namespace LeetCode.LeetAgain
     {
         public int ArrayNesting(int[] nums)
         {
-
+            throw new NotImplementedException();
         }
         public void Execute()
         {
