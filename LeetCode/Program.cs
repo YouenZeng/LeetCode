@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new Find132patternSln();
+            ISolution sln = new SubsetsWithDupSln();
             sln.Execute();
 
             Console.ReadLine();

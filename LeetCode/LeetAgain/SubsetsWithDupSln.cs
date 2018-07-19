@@ -1,20 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using System.Linq;
 
 namespace LeetCode.LeetAgain
 {
-    class SubsetsWithDupSln:ISolution
+    class SubsetsWithDupSln : ISolution
     {
         public void Execute()
         {
-            throw new NotImplementedException();
+            var rr = SubsetsWithDup(new[] { 1, 2, 2 });
         }
 
         public IList<IList<int>> SubsetsWithDup(int[] nums)
         {
             //https://leetcode.com/problems/subsets-ii/description/
-            //TODO
+
+
+            IList<IList<int>> rr = new List<IList<int>>();
+            //backtracking!
+            throw new NotImplementedException();
+
         }
     }
 }
