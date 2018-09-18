@@ -21,7 +21,7 @@ namespace LeetCode.LeetAgain
             {
 
             }
-
+            throw new NotImplementedException();
         }
         public void Execute()
         {

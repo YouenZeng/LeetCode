@@ -10,7 +10,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new ArrayNestingSln();
+            ISolution sln = new IsInterleaveSln();
             sln.Execute();
 
             Console.ReadLine();
