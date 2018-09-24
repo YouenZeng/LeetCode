@@ -10,7 +10,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new IsInterleaveSln();
+            ISolution sln = new CourseScheduleIISln();
             sln.Execute();
 
             Console.ReadLine();

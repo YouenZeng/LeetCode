@@ -11,45 +11,35 @@ namespace LeetCode.LeetAgain
         public bool IsInterleave(string s1, string s2, string s3)
         {
             if (s1.Length + s2.Length != s3.Length) return false;
-            bool[,] cache = new bool[s1.Length, s2.Length];
-            //if ((s1.length() + s2.length()) != s3.length()) return false;
+            bool[,] cache = new bool[s1.Length + 1, s2.Length + 1];
 
-            //boolean[][] matrix = new boolean[s2.length() + 1][s1.length() + 1];
+            cache[0, 0] = true;
+            for (int i = 1; i <= s1.Length; i++)
+            {
+                cache[i, 0] = cache[i-1,0] && (s1[i-1] == s3[i-1]);
+            }
 
-            //matrix[0][0] = true;
+            for (int i = 1; i <= s2.Length; i++)
+            {
+                cache[0, i] = cache[0, i - 1] && (s2[i-1] == s3[i-1]);
+            }
 
-            //for (int i = 1; i < matrix[0].length; i++)
-            //{
-            //    matrix[0][i] = matrix[0][i - 1] && (s1.charAt(i - 1) == s3.charAt(i - 1));
-            //}
+            for (int i = 1; i <= s1.Length; i++)
+            {
+                for (int j = 1; j <= s2.Length; j++)
+                {
+                    cache[i, j] = (s1[i - 1] == s3[i + j - 1] && cache[i - 1, j]) || (s2[j - 1] == s3[i + j - 1] && cache[i, j - 1]);
+                }
+            }
 
-            //for (int i = 1; i < matrix.length; i++)
-            //{
-            //    matrix[i][0] = matrix[i - 1][0] && (s2.charAt(i - 1) == s3.charAt(i - 1));
-            //}
-
-            //for (int i = 1; i < matrix.length; i++)
-            //{
-            //    for (int j = 1; j < matrix[0].length; j++)
-            //    {
-            //        matrix[i][j] = (matrix[i - 1][j] && (s2.charAt(i - 1) == s3.charAt(i + j - 1)))
-            //                       || (matrix[i][j - 1] && (s1.charAt(j - 1) == s3.charAt(i + j - 1)));
-            //    }
-            //}
-
-            //return matrix[s2.length()][s1.length()];
-
-
-
-
-            //return Dfs(s1, s2, s3, 0, 0, 0, cache);
+            return cache[s1.Length, s2.Length];
         }
 
         public void Execute()
         {
-            string s1 = "aabcc";
-            string s2 = "dbbca";
-            string s3 = "aadbbcbcac";
+            string s1 = "a";
+            string s2 = "";
+            string s3 = "a";
 
             Console.WriteLine(IsInterleave(s1, s2, s3));
         }
