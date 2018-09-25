@@ -7,24 +7,25 @@ namespace LeetCode.LeetAgain
 {
     class FindSecondMinimumValueSln : ISolution
     {
-        private HashSet<int> hs = new HashSet<int>();
+        private int min = -1;
         public int FindSecondMinimumValue(TreeNode root)
         {
             if (root.left == null) return -1;
-            FindMin(root);
-            var arr = hs.ToArray();
-            if (arr.Length == 1) return -1;
-            Array.Sort(arr);
-            return arr[1];
-
+            min = root.val;
+            int max = Math.Max(Dfs(root.left), Dfs(root.right));
+            if (min == max) return -1;
+            return max;
         }
-        private void FindMin(TreeNode root)
-        {
-            hs.Add(root.val);
-            if (root.left == null) return;
 
-            FindMin(root.left);
-            FindMin(root.right);
+        private int Dfs(TreeNode root)
+        {
+            if (root.left == null) return root.val;
+            if (root.left.val < root.right.val)
+            {
+                return Dfs(root.left);
+            }
+
+            return Dfs(root.right);
         }
 
         public void Execute()
