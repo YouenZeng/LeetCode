@@ -10,7 +10,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new SolveNQueensSln();
+            ISolution sln = new PartitionLabelsSln();
             sln.Execute();
 
             Console.ReadLine();
