@@ -10,7 +10,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new PartitionLabelsSln();
+            ISolution sln = new FindWordsSln();
             sln.Execute();
 
             Console.ReadLine();
