@@ -8,10 +8,8 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindWordsSln();
+            ISolution sln = new FindClosestElementsSln();
             sln.Execute();
-
-            int[,] arr = new int[3, 2] { { 1, 2 }, { 1, 2 }, { 1, 2 } };
 
             Console.ReadLine();
         }
