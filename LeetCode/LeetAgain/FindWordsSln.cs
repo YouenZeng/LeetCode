@@ -1,74 +1,76 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace LeetCode.LeetAgain
 {
     class FindWordsSln : ISolution
     {
-        public IList<string> FindWords(char[,] board, string[] words)
-        {
-            HashSet<string> hs = new HashSet<string>();
-            foreach (string word in words)
-            {
-                if (WordCheck(board, word))
-                {
-                    hs.Add(word);
-                }
-            }
 
-            return hs.ToList();
-        }
-
-        private bool WordCheck(char[,] board, string word)
+        public List<string> FindWords(char[,] board, string[] words)
         {
-            bool[,] visited = new bool[board.GetLength(0), board.GetLength(1)];
+            List<string> result = new List<string>();
+
+            TrieNode root = BuildTrie(words);
 
             for (int i = 0; i < board.GetLength(0); i++)
             {
                 for (int j = 0; j < board.GetLength(1); j++)
                 {
-                    if (WordCheckInternal(board, word, 0, i, j, visited))
-                    {
-                        return true;
-                    }
+                    Dfs(board, i, j, root, result);
                 }
             }
-            return false;
-
+            return result;
         }
 
-        private bool WordCheckInternal(char[,] board, string word, int stringIndex, int boardX, int boardY, bool[,] visisted)
+        public void Dfs(char[,] board, int i, int j, TrieNode p, List<string> result)
         {
-            if (boardX < 0 || boardX >= board.GetLength(0)) return false;
-            if (boardY < 0 || boardY >= board.GetLength(1)) return false;
-            if (visisted[boardX, boardY]) return false;
+            char c = board[i, j];
 
-            if (visisted[boardX, boardY] == false && board[boardX, boardY] == word[stringIndex])
+            if (c == '#' || p.Next[c - 'a'] == null) return;
+
+            p = p.Next[c - 'a'];
+            if (p.Word != null)
             {
-                if (stringIndex == word.Length - 1)
-                {
-                    return true;
-                }
-                visisted[boardX, boardY] = true;
-                if (WordCheckInternal(board, word, stringIndex + 1, boardX - 1, boardY, visisted) ||
-                 WordCheckInternal(board, word, stringIndex + 1, boardX + 1, boardY, visisted) ||
-                 WordCheckInternal(board, word, stringIndex + 1, boardX, boardY - 1, visisted) ||
-                 WordCheckInternal(board, word, stringIndex + 1, boardX, boardY + 1, visisted)
-                 )
-                {
-                    return true;
-                }
-                visisted[boardX, boardY] = false;
-                return false;
+                result.Add(p.Word);
+                p.Word = null;
             }
-            else
-            {
-                return false;
-            }
+
+            board[i, j] = '#';
+
+            if (i > 0) Dfs(board, i - 1, j, p, result);
+            if (j > 0) Dfs(board, i, j - 1, p, result);
+            if (i < board.GetLength(0) - 1) Dfs(board, i + 1, j, p, result);
+            if (j < board.GetLength(1) - 1) Dfs(board, i, j + 1, p, result);
+
+            board[i, j] = c;
         }
 
+        public TrieNode BuildTrie(string[] words)
+        {
+            TrieNode trieNode = new TrieNode();
+            foreach (var word in words)
+            {
+                TrieNode p = trieNode;
+
+                foreach (char c in word)
+                {
+                    int i = c - 'a';
+                    if (p.Next[i] == null) p.Next[i] = new TrieNode();
+                    p = p.Next[i];
+                }
+                p.Word = word;
+            }
+            return trieNode;
+        }
+        public class TrieNode
+        {
+            public TrieNode()
+            {
+                Next = new TrieNode[26];
+            }
+            public TrieNode[] Next { get; set; }
+            public string Word { get; set; }
+        }
         public void Execute()
         {
             var r = FindWords(new char[4, 4] { { 'o', 'a', 'a', 'n' },
@@ -78,4 +80,6 @@ namespace LeetCode.LeetAgain
             Console.WriteLine(r);
         }
     }
+
+
 }

@@ -1,5 +1,3 @@
-using LeetCode.Dp;
-using LeetCode.Infra;
 using LeetCode.LeetAgain;
 using System;
 
@@ -12,6 +10,8 @@ namespace LeetCode
         {
             ISolution sln = new FindWordsSln();
             sln.Execute();
+
+            int[,] arr = new int[3, 2] { { 1, 2 }, { 1, 2 }, { 1, 2 } };
 
             Console.ReadLine();
         }
