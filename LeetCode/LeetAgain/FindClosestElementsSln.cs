@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace LeetCode.LeetAgain
 {
@@ -9,84 +8,40 @@ namespace LeetCode.LeetAgain
     {
         public IList<int> FindClosestElements(int[] arr, int k, int x)
         {
-            if (x <= arr[0]) return arr.Take(k).ToArray();
-            if (x >= arr[arr.Length - 1]) return arr.Skip(arr.Length - k).Take(k).ToArray();
-
-            int[] result = new int[k];
-
-
-            int startIndex = -1;
-            int prev = arr[0];
-            for (int i = 0; i < arr.Length; i++)
+            int start = 0;
+            int end = arr.Length;
+            while (start < end)
             {
-                if (x > prev && x <= arr[i])
-                {
-                    startIndex = i;
-                    break;
-                }
-                prev = arr[i];
+                int mid = (end - start) / 2 + start;
+                if (arr[mid] < x) start = mid + 1;
+                else end = mid;
             }
 
-            if (arr[startIndex] != x)
-            {
-                if (Math.Abs(x - arr[startIndex]) > Math.Abs(x - arr[startIndex -1]))
-                {
-                    startIndex = startIndex - 1;
-                }
-            }
-
-
-            int count = 0;
-            int abs = Math.Abs(x - arr[startIndex]);
-            result[count] = arr[startIndex];
-            count++;
-            int left = startIndex - 1;
-            int right = startIndex + 1;
-            int leftAbs = 0;
-            int rightAbs = 0;
-            while (count < k)
+            int left = start - 1;
+            int right = end;
+            while (k > 0)
             {
                 if (left < 0)
-                {
-                    leftAbs = int.MaxValue;
-                }
-                else
-                {
-                    leftAbs = Math.Abs(x - arr[left]);
-                }
-                if (right >= arr.Length)
-                {
-                    rightAbs = int.MaxValue;
-                }
-                else
-                {
-                    rightAbs = Math.Abs(x - arr[right]);
-                }
-
-
-                if (leftAbs <= rightAbs)
-                {
-                    result[count] = arr[left];
-                    left--;
-                    count++;
-                    continue;
-                }
-                else
-                {
-                    result[count] = arr[right];
                     right++;
-                    count++;
-                    continue;
-                }
-            }
+                else if (right >= arr.Length)
+                    left--;
 
-            Array.Sort(result);
-            return result;
+                else if (Math.Abs(x - arr[left]) <= Math.Abs(x - arr[right]))
+                {
+                    left--;
+                }
+                else
+                {
+                    right++;
+                }
+                k--;
+            }
+            return arr.Skip(left+1).Take(right - left-1).ToArray();
         }
         public void Execute()
         {
-            var arr = FindClosestElements(new int[] { 0, 0, 1, 2, 3, 3, 4, 7, 7, 8 }, 3, 5);
-            arr = FindClosestElements(new int[] { 1, 2, 3, 4, 5 }, 4, -1);
+            var arr = FindClosestElements(new int[] { 0, 0, 1, 3, 5, 6, 7, 8, 8 }, 2, 2);
+            arr = FindClosestElements(new int[] { 1, 2, 3, 4, 5 }, 4, 3);
             arr = FindClosestElements(new int[] { 1, 2, 3, 4, 5 }, 4, 11);
         }
     }

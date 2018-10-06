@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindClosestElementsSln();
+            ISolution sln = new CanJumpSln();
             sln.Execute();
 
             Console.ReadLine();
