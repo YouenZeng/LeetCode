@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CanJumpSln();
+            ISolution sln = new CustomSortStringSln();
             sln.Execute();
 
             Console.ReadLine();
