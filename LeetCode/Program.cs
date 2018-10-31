@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CustomSortStringSln();
+            ISolution sln = new LongestWordSln();
             sln.Execute();
 
             Console.ReadLine();

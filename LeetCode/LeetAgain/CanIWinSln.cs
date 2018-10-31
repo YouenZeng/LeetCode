@@ -8,7 +8,7 @@ namespace LeetCode.LeetAgain
     {
         public bool CanIWin(int maxChoosableInteger, int desiredTotal)
         {
-            Dictionary<int, HashSet<int>> dict = new Dictionary<int, HashSet<int>();
+            Dictionary<int, HashSet<int>> dict = new Dictionary<int, HashSet<int>>();
 
             for (int i = 0; i < desiredTotal; i++)
             {
