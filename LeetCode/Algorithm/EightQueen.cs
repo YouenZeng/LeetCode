@@ -4,17 +4,7 @@ namespace LeetCode.Algorithm
 {
     class EightQueen
     {
-        private static bool IsConsistend(int[] q, int n)
-        {
-            for (int i = 0; i < n; i++)
-            {
-                if (q[i] == q[n]) return false;
-                if (q[i] - q[n] == n - i) return false;
-                if (q[n] - q[i] == n - i) return false;
-            }
 
-            return true;
-        }
 
         private static int countEnum = 0;
 
@@ -50,6 +40,18 @@ namespace LeetCode.Algorithm
                     }
                 }
             }
+        }
+
+        private static bool IsConsistend(int[] q, int n)
+        {
+            for (int i = 0; i < n; i++)
+            {
+                if (q[i] == q[n]) return false;
+                if (q[i] - q[n] == n - i) return false;
+                if (q[n] - q[i] == n - i) return false;
+            }
+
+            return true;
         }
 
         public static void Queen(int n)
