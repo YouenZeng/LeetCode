@@ -8,15 +8,29 @@ namespace LeetCode.LeetAgain
     public class NumArray
     {
         readonly int[] _numsInternal;
-
+        readonly int[] _nums;
         public NumArray(int[] nums)
         {
+            _nums = nums;
+
             int numLength = nums.Length;
+            _numsInternal = new int[numLength];
+            Array.Copy(nums, _numsInternal, numLength);
             for (int i = 1; i < numLength; i++)
             {
-                nums[i] += nums[i - 1];
+                _numsInternal[i] += _numsInternal[i - 1];
             }
-            _numsInternal = nums;
+        }
+
+        public void Update(int i, int val)
+        {
+
+            int diff = val - _nums[i];
+            _nums[i] = val;
+            for (int j = i; j < _numsInternal.Length; j++)
+            {
+                _numsInternal[j] += diff;
+            }
         }
 
         public int SumRange(int i, int j)
@@ -25,6 +39,5 @@ namespace LeetCode.LeetAgain
                 return _numsInternal[j];
             return _numsInternal[j] - _numsInternal[i - 1];
         }
-
     }
 }
