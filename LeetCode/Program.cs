@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new MinFlipsMonoIncrSln();
+            ISolution sln = new TriangleNumberSln();
             sln.Execute();
 
             Console.ReadLine();
