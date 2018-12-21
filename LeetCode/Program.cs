@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new RightSideViewSln();
+            ISolution sln = new FindUnsortedSubarraySln();
             sln.Execute();
 
             Console.ReadLine();
