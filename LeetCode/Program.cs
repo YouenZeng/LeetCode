@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindUnsortedSubarraySln();
+            ISolution sln = new ShortestSubarraySln();
             sln.Execute();
 
             Console.ReadLine();
