@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CanReorderDoubledSln();
+            ISolution sln = new TascalsTriangleiiSln();
             sln.Execute();
 
             Console.ReadLine();
