@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new SmallestDistancePairSln();
+            ISolution sln = new CanReorderDoubledSln();
             sln.Execute();
 
             Console.ReadLine();
