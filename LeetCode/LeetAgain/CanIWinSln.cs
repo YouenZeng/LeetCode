@@ -1,30 +1,47 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LeetCode.LeetAgain
 {
-    class CanIWinSln : ISolution
+    internal class CanIWinSln : ISolution
     {
         public bool CanIWin(int maxChoosableInteger, int desiredTotal)
         {
-            Dictionary<int, HashSet<int>> dict = new Dictionary<int, HashSet<int>>();
+            int sum = (1 + maxChoosableInteger) * maxChoosableInteger;
+            if (maxChoosableInteger >= desiredTotal) return true;
+            if (sum < desiredTotal) return false;
+            if (sum == desiredTotal) return sum % 2 == 0;
 
-            for (int i = 0; i < desiredTotal; i++)
+            Dictionary<int, bool> visisted = new Dictionary<int, bool>();
+
+
+            return Dfs(visisted, maxChoosableInteger, desiredTotal, 0);
+        }
+
+        private bool Dfs(Dictionary<int, bool> visited, int maxChoosableInteger, int desiredTotal, int currentTotal)
+        {
+            if (desiredTotal <= 0) return false;
+
+            if (visited.ContainsKey(currentTotal)) return visited[currentTotal];
+
+            for (int i = 0; i < maxChoosableInteger; i++)
             {
-                for (int j = 0; j < maxChoosableInteger; j++)
+                //i+1 not picked
+                if ((currentTotal & (1 << i)) == 0 &&
+                    //and dfs(oppeonent) cant reach next state , then I win.
+                    !Dfs(visited, maxChoosableInteger, desiredTotal - i - 1, currentTotal | (1 << i)))
                 {
-                    if (dict.ContainsKey(i) == false)
-                    {
-                        dict.Add(i, new HashSet<int>() { 1 });
-                    }
+                    visited.Add(currentTotal, true);
+                    return true;
                 }
             }
-            throw new NotImplementedException();
+
+            visited.Add(currentTotal, false);
+            return false;
         }
         public void Execute()
         {
-            throw new NotImplementedException();
+            CanIWin(4, 6);
         }
     }
 }
