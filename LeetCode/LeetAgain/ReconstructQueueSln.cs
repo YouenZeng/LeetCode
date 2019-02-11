@@ -8,9 +8,44 @@ namespace LeetCode.LeetAgain
     {
         public int[,] ReconstructQueue(int[,] people)
         {
-            int[,] result = new int[people.GetLength(0), 2];
+            Dictionary<int, List<int>> peopleDict = new Dictionary<int, List<int>>();
+            List<int> heightList = new List<int>();
+            for (int i = 0; i < people.GetLength(0); i++)
+            {
+                if (peopleDict.ContainsKey(people[i, 0]))
+                {
+                    peopleDict[people[i, 0]].Add(people[i, 1]);
+                }
+                else
+                {
+                    peopleDict.Add(people[i, 0], new List<int>() { people[i, 1] });
+                    heightList.Add(people[i, 0]);
+                }
+            }
 
-            throw new NotImplementedException();
+            heightList.Sort();
+
+            SortedSet<int> inQueue = new SortedSet<int>();
+
+            int[,] result = new int[people.GetLength(0), 2];
+            foreach (int h in heightList)
+            {
+                var item = peopleDict[h];
+                List<int> positionList = peopleDict[h];
+                IOrderedEnumerable<int> pp = positionList.OrderByDescending(p => p);
+                foreach (int position in pp)
+                {
+                    int p = position;
+                    foreach (int q in inQueue)
+                    {
+                        if (p >= q) p++;
+                    }
+                    result[p, 0] = item.Key;
+                    result[p, 1] = position;
+                    inQueue.Add(p);
+                }
+            }
+            return result;
         }
         public void Execute()
         {
