@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new SlidingPuzzleSln();
+            ISolution sln = new ReconstructQueueSln();
             sln.Execute();
 
             Console.ReadLine();
