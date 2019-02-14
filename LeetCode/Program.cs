@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LongestIncreasingPathSln();
+            ISolution sln = new MatrixScoreSln();
             sln.Execute();
 
             Console.ReadLine();
