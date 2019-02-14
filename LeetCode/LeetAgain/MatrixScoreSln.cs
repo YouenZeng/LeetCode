@@ -5,9 +5,9 @@
         public int MatrixScore(int[][] A)
         {
             //1. iterate each row, if first is 0 then revert it
-            int m = A.Length; //rows
-            int n = A[0].Length; //columns
-            for (int i = 0; i < m; i++)
+            int rowCount = A.Length; //rows
+            int firstRowLength = A[0].Length; //columns
+            for (int i = 0; i < rowCount; i++)
             {
                 if (A[i][0] == 0)
                 {
@@ -16,15 +16,15 @@
             }
 
             //2. iterate each column, make as many 1s as possible
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < firstRowLength; i++)
             {
                 int count = 0;
-                for (int j = 0; j < m && i < A[j].Length; j++)
+                for (int j = 0; j < rowCount; j++)
                 {
                     count += A[j][i];
                 }
 
-                if (count * 2 < m)
+                if (count * 2 < rowCount)
                 {
                     FlipColumn(A, i);
                 }
@@ -32,9 +32,9 @@
 
             int result = 0;
             int bin = 1;
-            for (int i = n - 1; i >= 0; i--)
+            for (int i = firstRowLength - 1; i >= 0; i--)
             {
-                for (int j = 0; j < m && i<A[j].Length; j++)
+                for (int j = 0; j < rowCount ; j++)
                 {
                     result += A[j][i] * bin;
                 }
@@ -55,7 +55,7 @@
 
         private void FlipColumn(int[][] A, int column)
         {
-            for (int i = 0; i < A.Length && A[i].Length < column; i++)
+            for (int i = 0; i < A.Length; i++)
             {
                 A[i][column] = 1 - A[i][column];
             }
