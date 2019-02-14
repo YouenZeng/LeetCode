@@ -40,7 +40,7 @@ namespace LeetCode.LeetAgain
                     {
                         if (p >= q) p++;
                     }
-                    result[p, 0] = item.Key;
+                    result[p, 0] = h;
                     result[p, 1] = position;
                     inQueue.Add(p);
                 }
