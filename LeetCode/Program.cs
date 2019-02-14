@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new ReconstructQueueSln();
+            ISolution sln = new LargestPerimeterSln();
             sln.Execute();
 
             Console.ReadLine();

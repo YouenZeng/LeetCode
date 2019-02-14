@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace LeetCode.LeetAgain
@@ -9,7 +10,7 @@ namespace LeetCode.LeetAgain
         {
             int[,] result = new int[people.GetLength(0), 2];
 
-            
+            throw new NotImplementedException();
         }
         public void Execute()
         {
