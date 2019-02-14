@@ -30,7 +30,6 @@ namespace LeetCode.LeetAgain
             int[,] result = new int[people.GetLength(0), 2];
             foreach (int h in heightList)
             {
-                var item = peopleDict[h];
                 List<int> positionList = peopleDict[h];
                 IOrderedEnumerable<int> pp = positionList.OrderByDescending(p => p);
                 foreach (int position in pp)
