@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new MatrixScoreSln();
+            ISolution sln = new FindRestaurantSln();
             sln.Execute();
 
             Console.ReadLine();
