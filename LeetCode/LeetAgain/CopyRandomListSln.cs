@@ -7,6 +7,7 @@ namespace LeetCode.LeetAgain
 {
     class CopyRandomListSln
     {
+        //https://leetcode.com/problems/copy-list-with-random-pointer/
         public Node CopyRandomList(Node head)
         {
             //build node
