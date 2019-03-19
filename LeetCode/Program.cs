@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindRestaurantSln();
+            ISolution sln = new IsSubtreeSln();
             sln.Execute();
 
             Console.ReadLine();
