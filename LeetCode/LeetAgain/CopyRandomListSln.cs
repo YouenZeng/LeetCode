@@ -10,43 +10,31 @@ namespace LeetCode.LeetAgain
         //https://leetcode.com/problems/copy-list-with-random-pointer/
         public Node CopyRandomList(Node head)
         {
-            //build node
+            if (head == null) return null;
+
             Dictionary<Node, Node> dict = new Dictionary<Node, Node>();
-
-            while (head.next != null)
+            Node tempHead = head;
+            while (tempHead != null)
             {
-                if (dict.ContainsKey(head))
-                {
-                    head = dict[head];
-                }
-                else
-                {
-                    var newHead = new Node(head.val, head.next, head.random);
-                    dict.Add(head.next, newHead);
-                    head = newHead;
-                }
-
-                if (head.random != null)
-                {
-                    if (dict.ContainsKey(head.random))
-                    {
-                        head.random = dict[head.random];
-                    }
-                    else
-                    {
-                        var newHead = new Node(head.random.val, head.random.next, head.random.random);
-                        dict.Add(head.random, newHead);
-                        head.random = newHead;
-                    }
-                }
-                head = head.next;
+                Node newHead = new Node(tempHead.val, tempHead.next, tempHead.random);
+                dict.Add(tempHead, newHead);
+                tempHead = tempHead.next;
             }
 
-            //return new Node(fakeHead.next.val, fakeHead.next.next, fakeHead.next.random);
+            tempHead = head;
+            while (tempHead != null)
+            {
+                if (tempHead.next != null)
+                    dict[tempHead].next = dict[tempHead.next];
 
-            //build random
+                if (tempHead.random != null)
+                    dict[tempHead].random = dict[tempHead.random];
 
 
+                tempHead = tempHead.next;
+            }
+
+            return dict[head];
         }
     }
 
