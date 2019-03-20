@@ -6,7 +6,7 @@ namespace LeetCode.LeetAgain
     {
         public char FindTheDifference(string s, string t)
         {
-            int temp = t[s.Length - 1];
+            int temp = t[s.Length];
             for (int i = 0; i < s.Length; i++)
             {
                 temp = temp ^ s[i] ^ t[i];
