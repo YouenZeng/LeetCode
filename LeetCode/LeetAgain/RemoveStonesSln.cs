@@ -8,7 +8,7 @@ namespace LeetCode.LeetAgain
         {
             for (int i = 0; i < stones.GetLength(0); i++)
             {
-                Union(stones[i][0], ~stones[i][1]);
+                Union(stones[i][0], 10000+stones[i][1]);
             }
             return stones.GetLength(0) - Moves;
             //MAKE-SETS(G)
