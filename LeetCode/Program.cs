@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new IsSubtreeSln();
+            ISolution sln = new RemoveStonesSln();
             sln.Execute();
 
             Console.ReadLine();
