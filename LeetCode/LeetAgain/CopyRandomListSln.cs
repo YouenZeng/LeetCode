@@ -1,17 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Net.Http.Headers;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace LeetCode.LeetAgain
 {
-    class CopyRandomListSln
+    internal class CopyRandomListSln
     {
         //https://leetcode.com/problems/copy-list-with-random-pointer/
         public Node CopyRandomList(Node head)
         {
             if (head == null) return null;
-
             Dictionary<Node, Node> dict = new Dictionary<Node, Node>();
             Node tempHead = head;
             while (tempHead != null)
@@ -24,17 +20,17 @@ namespace LeetCode.LeetAgain
             tempHead = head;
             while (tempHead != null)
             {
-                if (tempHead.next != null)
+                if(tempHead.next!=null)
                     dict[tempHead].next = dict[tempHead.next];
 
-                if (tempHead.random != null)
+                if(tempHead.random!=null)
                     dict[tempHead].random = dict[tempHead.random];
-
 
                 tempHead = tempHead.next;
             }
 
             return dict[head];
+
         }
     }
 
