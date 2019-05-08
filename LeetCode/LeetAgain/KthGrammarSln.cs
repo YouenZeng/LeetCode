@@ -8,43 +8,11 @@ namespace LeetCode.LeetAgain
     {
         public int KthGrammar(int N, int K)
         {
-            int[] indexHistory = new int[32];
-            for (int i = 0; i < 32; i++)
-            {
-                indexHistory[i] = -1;
-            }
-            //to 0 based index
-            K = K - 1;
-            N = N - 1;
-            while (N >= 0)
-            {
-                indexHistory[N] = K;
-                K = K / 2;
-                N--;
-            }
-
-            int result = indexHistory[0];
-            
-            for (int i = 1; i < 32; i++)
-            {
-                if (indexHistory[i] == -1)
-                    break;
-
-                if (result == 0)
-                {
-                    result = (indexHistory[i] % 2);
-                    continue;
-                }
-                if (result == 1)
-                {
-                    result = ((indexHistory[i] + 1) % 2);
-                    continue;
-                }
-            }
-
-            Console.WriteLine(result);
-            return result;
+            if (N == 1) return 0;
+            if (K % 2 == 0) return (KthGrammar(N - 1, K / 2) == 0) ? 1 : 0;
+            return (KthGrammar(N - 1, (K + 1) / 2) == 0) ? 0 : 1;
         }
+
         public void Execute()
         {
             KthGrammar(1, 1);
