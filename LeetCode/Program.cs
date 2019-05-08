@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LargestDivisibleSubsetSln();
+            ISolution sln = new KthGrammarSln();
             sln.Execute();
 
             Console.ReadLine();
