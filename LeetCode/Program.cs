@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindMaxLengthSln();
+            ISolution sln = new SortedSquaresSln();
             sln.Execute();
 
             Console.ReadLine();
