@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new KthGrammarSln();
+            ISolution sln = new FindMaxLengthSln();
             sln.Execute();
 
             Console.ReadLine();
