@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new SortedSquaresSln();
+            ISolution sln = new LeastBricksSln();
             sln.Execute();
 
             Console.ReadLine();
