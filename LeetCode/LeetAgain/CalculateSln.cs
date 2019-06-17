@@ -93,7 +93,7 @@ namespace LeetCode.LeetAgain
 
         public void Execute()
         {
-            string input = @"2584";
+            string input = @"2+5+8+4";
             Calculate(input);
         }
     }

@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CalculateSln();
+            ISolution sln = new NumRescueBoatsSln();
             sln.Execute();
 
             Console.ReadLine();
