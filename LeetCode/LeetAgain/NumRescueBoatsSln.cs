@@ -12,38 +12,22 @@ namespace LeetCode.LeetAgain
             //greedy
             Array.Sort(people);
             int count = 0;
-
-            int start = 0;
-            int end = people.Length - 1;
-
-            var target = limit - people[start];
-            while (people[end] > target && start <= end && end > 0)
+            int pCount = people.Length;
+            for (int i = 0, j = pCount - 1; i <= j; j--, count++)
             {
-                end--;
-            }
-
-            int endIdx = end;
-            while (start <= end)
-            {
-                target = limit - people[start];
-
-                if (people[end] <= target)
+                if (people[i] + people[j] <= limit)
                 {
-                    start++;
-                    end--;
-                    count++;
-                }
-                else
-                {
-                    count++;
-                    end--;
+                    i++;
                 }
             }
 
-            return count + people.Length - endIdx - 1;
+            //Console.WriteLine(count);
+            return count;
         }
+
         public void Execute()
         {
+            NumRescueBoats(new[] { 1, 2 }, 3);
             NumRescueBoats(new[] { 1, 2, 2, 3 }, 3);
             NumRescueBoats(new[] { 1, 2, 3, 4, 5, 6, 7, 8 }, 9);
             NumRescueBoats(new[] { 11, 12, 13, 14, 15, 16, 17, 18 }, 19);
