@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new MinPatchesSln();
+            ISolution sln = new LongestCommonPrefixSln();
             sln.Execute();
 
             Console.ReadLine();
