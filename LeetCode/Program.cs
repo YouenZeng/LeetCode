@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindTargetSln();
+            ISolution sln = new MinPatchesSln();
             sln.Execute();
 
             Console.ReadLine();
