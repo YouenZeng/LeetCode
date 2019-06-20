@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LongestCommonPrefixSln();
+            ISolution sln = new FindMedianSortedArraysSln();
             sln.Execute();
 
             Console.ReadLine();
