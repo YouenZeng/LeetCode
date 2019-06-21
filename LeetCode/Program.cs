@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new IntToRomanSLn();
+            ISolution sln = new RomanToIntSln();
             sln.Execute();
 
             Console.ReadLine();
