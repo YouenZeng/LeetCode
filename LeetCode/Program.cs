@@ -9,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FindMedianSortedArraysSln();
+            ISolution sln = new IntToRomanSLn();
             sln.Execute();
 
             Console.ReadLine();
