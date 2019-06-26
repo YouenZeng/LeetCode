@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new ThreeSumSln();
+            ISolution sln = new ThreeSumClosestSln();
             sln.Execute();
 
             Console.ReadLine();
