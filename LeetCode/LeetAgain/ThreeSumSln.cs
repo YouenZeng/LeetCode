@@ -11,32 +11,50 @@ namespace LeetCode.LeetAgain
 
             Array.Sort(nums);
 
-            int start = 0;
-
-            while (start < nums.Length - 2)
+            for (int i = 0; i < nums.Length - 2; i++)
             {
-                int end = nums.Length - 1;
-                int tStart = start;
-                while (tStart < end)
+                if (i == 0 || nums[i] != nums[i - 1])
                 {
-                    int target = nums[tStart] + nums[end];
-                    target = target * -1;
+                    int start = i + 1;
+                    int end = nums.Length - 1;
+                    int target = nums[i] * -1;
 
-                    for (int i = tStart + 1; i < end - 1; i++)
+                    while (start < end)
                     {
-                        if (nums[i] == target)
+                        if (nums[start] + nums[end] == target)
                         {
-                            var r = new List<int> {nums[tStart], target, nums[end]};
-                            result.Add(r);
-                            break;
+                            result.Add(new List<int>()
+                            {
+                                nums[start],
+                                nums[i],
+                                nums[end]
+                            });
+
+                            while (start < end && nums[start] == nums[start + 1])
+                            {
+                                start++;
+                            }
+
+                            while (start < end && nums[end] == nums[end - 1])
+                            {
+                                end--;
+                            }
+
+                            start++;
+                            end--;
+                        }
+                        else if (nums[start] + nums[end] < target)
+                        {
+                            start++;
+                        }
+                        else
+                        {
+                            end--;
                         }
                     }
-
-                    end--;
                 }
-
-                start++;
             }
+
 
             return result;
         }
