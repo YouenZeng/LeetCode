@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LetterCombinationsSln();
+            ISolution sln = new LetterCombinationsBfsSln();
             sln.Execute();
 
             Console.ReadLine();
