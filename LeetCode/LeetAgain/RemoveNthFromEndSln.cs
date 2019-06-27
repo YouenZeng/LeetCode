@@ -7,6 +7,12 @@ namespace LeetCode.LeetAgain
 {
     class RemoveNthFromEndSln : ISolution
     {
+        /// <summary>
+        /// 思路为让慢节点晚n步启动, 这样当快节点到达终点时, 正好差n步慢节点到达终点, 这样即为倒数第n个节点
+        /// </summary>
+        /// <param name="head"></param>
+        /// <param name="n"></param>
+        /// <returns></returns>
         public ListNode RemoveNthFromEnd(ListNode head, int n)
         {
             int fast = 0;
