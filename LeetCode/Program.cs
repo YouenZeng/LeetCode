@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new GenerateParenthesisSln();
+            ISolution sln = new SwapPairsSln();
             sln.Execute();
 
             Console.ReadLine();
