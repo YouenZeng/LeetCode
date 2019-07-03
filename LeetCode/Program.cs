@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new SwapPairsSln();
+            ISolution sln = new ReverseKGroupSln();
             sln.Execute();
 
             Console.ReadLine();
