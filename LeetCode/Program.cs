@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LongestValidParenthesesSln();
+            ISolution sln = new SearchInsertSln();
             sln.Execute();
 
             Console.ReadLine();
