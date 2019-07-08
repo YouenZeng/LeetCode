@@ -42,6 +42,7 @@ namespace LeetCode.LeetAgain
             if (stack.Count == 0)
                 result = s.Length;
 
+            //start with last char
             int seed = s.Length;
             while (stack.Count > 0)
             {
@@ -50,6 +51,7 @@ namespace LeetCode.LeetAgain
                 seed = p;
             }
 
+            //check  seed - 0
             result = Math.Max(result, seed);
 
             return result;
