@@ -6,7 +6,17 @@ namespace LeetCode.LeetAgain
 {
     class CombinationSumSln : ISolution
     {
+        //procedure bt(c)
+        //    if reject(P, c) then return
+        //if accept(P, c) then output(P, c)
+        //s ← first(P, c)
+        //    while s ≠ NULL do
+        //bt(s)
+        //s ← next(P, s)
+
+
         IList<IList<int>> result = new List<IList<int>>();
+
         public IList<IList<int>> CombinationSum(int[] candidates, int target)
         {
             Array.Sort(candidates);
@@ -16,14 +26,11 @@ namespace LeetCode.LeetAgain
 
         private void Bt(int[] candidates, int target, int candidateStartIndex, List<int> steps)
         {
-
             if (target == 0)
             {
                 ////we found it!
                 //Console.WriteLine(string.Join("", steps));
                 //Console.WriteLine(Environment.NewLine);
-
-
 
                 result.Add(new List<int>(steps));
                 return;
@@ -43,7 +50,7 @@ namespace LeetCode.LeetAgain
 
         public void Execute()
         {
-            CombinationSum(new int[] { 2, 3, 6, 7 }, 7);
+            CombinationSum(new int[] {2, 3, 6, 7}, 7);
         }
     }
 }
