@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new SearchInsertSln();
+            ISolution sln = new SolveSudokuSln();
             sln.Execute();
 
             Console.ReadLine();
