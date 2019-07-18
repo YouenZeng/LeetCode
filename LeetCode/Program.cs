@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new FirstMissingPositiveSln();
+            ISolution sln = new WildMatchSln();
             sln.Execute();
 
             Console.ReadLine();

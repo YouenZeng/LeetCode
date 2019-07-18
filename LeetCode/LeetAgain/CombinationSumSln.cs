@@ -8,11 +8,11 @@ namespace LeetCode.LeetAgain
     {
         //procedure bt(c)
         //    if reject(P, c) then return
-        //if accept(P, c) then output(P, c)
-        //s ← first(P, c)
+        //    if accept(P, c) then output(P, c)
+        //    s ← first(P, c)
         //    while s ≠ NULL do
-        //bt(s)
-        //s ← next(P, s)
+        //          bt(s)
+        //          s ← next(P, s)
 
 
         IList<IList<int>> result = new List<IList<int>>();
