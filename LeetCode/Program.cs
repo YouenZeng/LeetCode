@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new WildMatchSln();
+            ISolution sln = new JumpGameSln();
             sln.Execute();
 
             Console.ReadLine();
