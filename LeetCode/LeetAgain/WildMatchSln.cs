@@ -40,18 +40,22 @@ procedure bt(c)
                 return true;
             }
 
-            //greedy
             if (pIndex < p.Length && (s[sIndex] == p[pIndex] || p[pIndex] == '?'))
             {
                 return Bt(s, sIndex + 1, p, pIndex + 1, lastStar, lastMatch);
             }
 
+            //记录最新的star pattern 位置,以及最新的匹配字符位置
+            //并尝试去匹配下个  pattern, 因为*可以匹配空字符串,所以使用当前字符位置
             if (pIndex < p.Length && p[pIndex] == '*')
             {
                 lastStar = pIndex;
                 lastMatch = sIndex;
                 return Bt(s, sIndex, p, pIndex + 1, lastStar, lastMatch);
             }
+            //不满足上面的匹配, 则尝试把上次匹配的字符串匹配到上次的star
+            //即       lastMatch+1
+            //继续尝试匹配下个pattern
             if (lastStar != -1)
             {
                 lastMatch += 1;
