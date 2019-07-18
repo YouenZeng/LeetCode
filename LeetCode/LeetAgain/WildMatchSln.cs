@@ -22,54 +22,52 @@ procedure bt(c)
             if (string.IsNullOrEmpty(p))
                 return string.IsNullOrEmpty(s);
 
-            var r = Bt(s, 0, p, 0, 0);
+            var r = Bt(s, 0, p, 0, -1, 0);
 
             return r;
         }
 
 
-        private bool Bt(string s, int sIndex, string p, int pIndex, int lastStar)
+        private bool Bt(string s, int sIndex, string p, int pIndex, int lastStar, int lastMatch)
         {
-            Console.WriteLine($"{sIndex}-{pIndex}");
-
-            if (sIndex >= s.Length)
+            if (sIndex == s.Length)
             {
-                if (pIndex >= p.Length)
-                {
-                    return true;
-                }
-
                 for (int i = pIndex; i < p.Length; i++)
                 {
                     if (p[i] != '*')
                         return false;
                 }
-
                 return true;
             }
 
-            if (pIndex >= p.Length)
-                return false;
-
-
-            if (p[pIndex] == '?' || p[pIndex] == s[sIndex])
+            //greedy
+            if (pIndex < p.Length && (s[sIndex] == p[pIndex] || p[pIndex] == '?'))
             {
-                return Bt(s, sIndex + 1, p, pIndex + 1, lastStar);
+                return Bt(s, sIndex + 1, p, pIndex + 1, lastStar, lastMatch);
             }
 
-            if (p[pIndex] == '*')
+            if (pIndex < p.Length && p[pIndex] == '*')
             {
                 lastStar = pIndex;
-                return Bt(s, sIndex + 1, p, pIndex + 1, lastStar);
+                lastMatch = sIndex;
+                return Bt(s, sIndex, p, pIndex + 1, lastStar, lastMatch);
+            }
+            if (lastStar != -1)
+            {
+                lastMatch += 1;
+                return Bt(s, lastMatch, p, lastStar + 1, lastStar, lastMatch);
             }
 
-            return Bt(s, sIndex, p, lastStar, lastStar);
+            return false;
         }
 
         public void Execute()
         {
+
+            Console.WriteLine(IsMatch("acdcb", "a*c?b"));
+            Console.WriteLine(IsMatch("aa", "a"));
             Console.WriteLine(IsMatch("abbabbbaabaaabbbbbabbabbabbbabbaaabbbababbabaaabbab", "*aabb***aa**a******aa*"));
-            Console.WriteLine(IsMatch("adceb", "*a*b"));
+
             Console.WriteLine(IsMatch(string.Empty, "***"));
             //Console.WriteLine(IsMatch("a","a"));
             Console.WriteLine(IsMatch("aa", "a*"));
