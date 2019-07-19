@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new JumpGameSln();
+            ISolution sln = new PermuteUniqueSln();
             sln.Execute();
 
             Console.ReadLine();
