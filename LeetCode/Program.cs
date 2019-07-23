@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new PermuteUniqueSln();
+            ISolution sln = new RotateSln();
             sln.Execute();
 
             Console.ReadLine();
