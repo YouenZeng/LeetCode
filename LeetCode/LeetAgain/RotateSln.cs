@@ -34,14 +34,6 @@ namespace LeetCode.LeetAgain
             }
         }
 
-        private void Swap(int[][] matrix, int x1, int y1, int x2, int y2)
-        {
-            int t = matrix[x1][y1];
-            matrix[x1][y1] = matrix[x2][y2];
-            matrix[x2][y2] = t;
-        }
-
-
         public void Execute()
         {
             Rotate(new[]

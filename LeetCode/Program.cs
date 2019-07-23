@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new RotateSln();
+            ISolution sln = new GroupAnagramsSln();
             sln.Execute();
 
             Console.ReadLine();
