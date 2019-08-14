@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new GroupAnagramsSln();
+            ISolution sln = new SpiralOrderSln();
             sln.Execute();
 
             Console.ReadLine();

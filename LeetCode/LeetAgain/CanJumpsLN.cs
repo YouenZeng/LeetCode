@@ -11,7 +11,7 @@ namespace LeetCode.LeetAgain
             if (nums.Length == 0) return false;
             if (nums.Length == 1) return true;
             int maxReachIndex = nums[0];
-            
+
             for (int j = 1; j < maxReachIndex; j++)
             {
                 maxReachIndex = Math.Max(maxReachIndex, j + nums[j]);
