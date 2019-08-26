@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LengthOfLastWordSln();
+            ISolution sln = new GenerateMatrixSln();
             sln.Execute();
 
             Console.ReadLine();
