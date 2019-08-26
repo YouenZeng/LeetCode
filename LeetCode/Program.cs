@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new SpiralOrderSln();
+            ISolution sln = new LengthOfLastWordSln();
             sln.Execute();
 
             Console.ReadLine();
