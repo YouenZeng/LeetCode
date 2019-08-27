@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new GenerateMatrixSln();
+            ISolution sln = new GetPermutationSln();
             sln.Execute();
 
             Console.ReadLine();
