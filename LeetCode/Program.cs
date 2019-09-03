@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new UniquePathsWithObstaclesSln();
+            ISolution sln = new MinPathSumSln();
             sln.Execute();
 
             Console.ReadLine();
