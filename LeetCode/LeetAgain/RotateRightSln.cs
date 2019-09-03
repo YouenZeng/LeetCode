@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using LeetCode.Leets;
 
 namespace LeetCode.LeetAgain
 {
@@ -8,7 +9,7 @@ namespace LeetCode.LeetAgain
     {
         public ListNode RotateRight(ListNode head, int k)
         {
-
+            throw new NotImplementedException();
         }
         public void Execute()
         {

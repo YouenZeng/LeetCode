@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new GetPermutationSln();
+            ISolution sln = new UniquePathsWithObstaclesSln();
             sln.Execute();
 
             Console.ReadLine();
