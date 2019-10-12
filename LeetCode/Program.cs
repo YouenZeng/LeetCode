@@ -1,3 +1,4 @@
+using DijkstraAlgorithm;
 using LeetCode.LeetAgain;
 using System;
 
@@ -8,8 +9,10 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new MinPathSumSln();
-            sln.Execute();
+            //ISolution sln = new MinPathSumSln();
+            //sln.Execute();
+
+            Dijkstra.Go(null);
 
             Console.ReadLine();
         }
