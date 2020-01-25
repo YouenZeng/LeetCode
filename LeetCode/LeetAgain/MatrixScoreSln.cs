@@ -1,13 +1,18 @@
-﻿namespace LeetCode.LeetAgain
+﻿using System.Collections.Generic;
+
+namespace LeetCode.LeetAgain
 {
     internal class MatrixScoreSln : ISolution
     {
         public int MatrixScore(int[][] A)
         {
             //1. iterate each row, if first is 0 then revert it
-            int m = A.Length; //rows
-            int n = A[0].Length; //columns
-            for (int i = 0; i < m; i++)
+            int rowsCount = A.Length; //rows
+            int firstRowColumnCount = A[0].Length; //columns
+
+            
+
+            for (int i = 0; i < rowsCount; i++)
             {
                 if (A[i][0] == 0)
                 {
@@ -16,15 +21,16 @@
             }
 
             //2. iterate each column, make as many 1s as possible
-            for (int i = 0; i < n; i++)
+            for (int i = 0; i < firstRowColumnCount; i++)
             {
                 int count = 0;
-                for (int j = 0; j < m && i < A[j].Length; j++)
+               
+                for (int j = 0; j < rowsCount && i < A[j].Length; j++)
                 {
                     count += A[j][i];
                 }
 
-                if (count * 2 < m)
+                if (count * 2 < rowsCount)
                 {
                     FlipColumn(A, i);
                 }
@@ -32,9 +38,9 @@
 
             int result = 0;
             int bin = 1;
-            for (int i = n - 1; i >= 0; i--)
+            for (int i = firstRowColumnCount - 1; i >= 0; i--)
             {
-                for (int j = 0; j < m && i<A[j].Length; j++)
+                for (int j = 0; j < rowsCount && i<A[j].Length; j++)
                 {
                     result += A[j][i] * bin;
                 }
