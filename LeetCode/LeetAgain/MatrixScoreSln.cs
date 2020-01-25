@@ -7,12 +7,9 @@ namespace LeetCode.LeetAgain
         public int MatrixScore(int[][] A)
         {
             //1. iterate each row, if first is 0 then revert it
-            int rowsCount = A.Length; //rows
-            int firstRowColumnCount = A[0].Length; //columns
-
-            
-
-            for (int i = 0; i < rowsCount; i++)
+            int rowCount = A.Length; //rows
+            int firstRowLength = A[0].Length; //columns
+            for (int i = 0; i < rowCount; i++)
             {
                 if (A[i][0] == 0)
                 {
@@ -21,16 +18,15 @@ namespace LeetCode.LeetAgain
             }
 
             //2. iterate each column, make as many 1s as possible
-            for (int i = 0; i < firstRowColumnCount; i++)
+            for (int i = 0; i < firstRowLength; i++)
             {
                 int count = 0;
-               
-                for (int j = 0; j < rowsCount && i < A[j].Length; j++)
+                for (int j = 0; j < rowCount; j++)
                 {
                     count += A[j][i];
                 }
 
-                if (count * 2 < rowsCount)
+                if (count * 2 < rowCount)
                 {
                     FlipColumn(A, i);
                 }
@@ -38,9 +34,9 @@ namespace LeetCode.LeetAgain
 
             int result = 0;
             int bin = 1;
-            for (int i = firstRowColumnCount - 1; i >= 0; i--)
+            for (int i = firstRowLength - 1; i >= 0; i--)
             {
-                for (int j = 0; j < rowsCount && i<A[j].Length; j++)
+                for (int j = 0; j < rowCount ; j++)
                 {
                     result += A[j][i] * bin;
                 }
@@ -61,7 +57,7 @@ namespace LeetCode.LeetAgain
 
         private void FlipColumn(int[][] A, int column)
         {
-            for (int i = 0; i < A.Length && A[i].Length < column; i++)
+            for (int i = 0; i < A.Length; i++)
             {
                 A[i][column] = 1 - A[i][column];
             }

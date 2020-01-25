@@ -50,7 +50,7 @@ namespace LeetCode.LeetAgain
 
                 }, new Interval(0, 99));
 
-                  Insert(new List<Interval> {
+            Insert(new List<Interval> {
                 new Interval(100, 200),
                 // new Interval(3, 5),
                 // new Interval(6, 7),
