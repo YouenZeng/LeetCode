@@ -1,6 +1,7 @@
 using DijkstraAlgorithm;
 using LeetCode.LeetAgain;
 using System;
+using LeetCode.DesignPattern.Visitor;
 
 
 namespace LeetCode
@@ -9,12 +10,13 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            //ISolution sln = new MinPathSumSln();
+
+            Client  c = new Client();
+            c.Go();
+
+            //ISolution sln = new MergeSlnNew();
             //sln.Execute();
 
-            Dijkstra.Go(null);
-
-            Console.ReadLine();
         }
     }
 }

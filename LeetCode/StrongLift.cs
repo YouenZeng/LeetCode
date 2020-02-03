@@ -1,12 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LeetCode
 {
     public class StrongLift
     {
-        public void PlateCombine(int target)
+        public void PlateCombine(int target, int setCount = 1)
         {
             int barWeight = 45;
             if (target < barWeight)
@@ -23,12 +24,12 @@ namespace LeetCode
             //plate SKU
             Dictionary<int, int> availablePlates = new Dictionary<int, int>()
             {
-                {90,10 },
-                {70,10 },
-                {50,10 },
-                {20,10 },
-                {10,10 },
-                {5,10 }
+                {90,setCount },
+                {70,setCount },
+                {50,setCount },
+                {20,setCount },
+                {10,setCount },
+                {5,setCount }
             };
 
             List<int> plateUnit = new List<int>()
