@@ -11,13 +11,14 @@ namespace LeetCode.LeetAgain
 
             Array.Sort(nums);
 
+
             for (int i = 0; i < nums.Length - 2; i++)
             {
                 if (i == 0 || nums[i] != nums[i - 1])
                 {
                     int start = i + 1;
                     int end = nums.Length - 1;
-                    int target = nums[i] * -1;
+                    int target = nums[i]  * -1;
 
                     while (start < end)
                     {
@@ -58,6 +59,35 @@ namespace LeetCode.LeetAgain
 
             return result;
         }
+
+        private bool FindInRange(int[] nums, int start, int end, int target)
+        {
+            if (nums[start] > target || nums[end] < target)
+                return false;
+
+            if (start > end)
+                return false;
+
+            if (start == end)
+                return nums[start] == target;
+
+            int mid = (end - start) / 2 + start;
+
+            if (nums[mid] == target)
+            {
+                return true;
+            }
+
+            if (nums[mid] > target)
+            {
+                return FindInRange(nums, start, mid, target);
+            }
+            else
+            {
+                return FindInRange(nums, mid + 1, end, target);
+            }
+        }
+
 
         public void Execute()
         {

@@ -28,7 +28,7 @@
 
         public void Execute()
         {
-            MinPatches(nums: new[] {  5, 10 }, 20);
+            MinPatches( new[] {  5, 10 }, 20);
         }
     }
 }
