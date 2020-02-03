@@ -6,23 +6,23 @@ using System.Threading.Tasks;
 
 namespace LeetCode.LeetAgain
 {
-    class ClimbStairsSln : ISolution
+    internal class ClimbStairsSln : ISolution
     {
 
         public int ClimbStairs(int n)
         {
-            if (n <= 2) return n;
-
-            int stepsBeforeOne = 2;
-            int stepsBeforeTwo = 1;
-            int all = 0;
-            for (int i = 2; i < n; i++)
+            int result = 1;
+            int prev = 1;
+            int pPrev = 1;
+            for (int i = 1; i < n; i++)
             {
-                all = stepsBeforeOne + stepsBeforeTwo;
-                stepsBeforeTwo = stepsBeforeOne;
-                stepsBeforeOne = all;
+                result = prev + pPrev;
+                pPrev = prev;
+                prev = result;
             }
-            return all;
+
+
+            return result;
         }
 
         //int ClimbWrapper(int n, int[] memo)

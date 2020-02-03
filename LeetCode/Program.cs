@@ -10,13 +10,13 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            Nga nga = new Nga();
-            nga.TryGenerate();
+            //Nga nga = new Nga();
+            //nga.TryGenerate();
 
-            //ISolution sln = new ThreeSumSln();
-            //sln.Execute();
+            ISolution sln = new ClimbStairsSln();
+            sln.Execute();
 
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }
 }
