@@ -13,8 +13,12 @@ namespace LeetCode
             //Nga nga = new Nga();
             //nga.TryGenerate();
 
-            ISolution sln = new ClimbStairsSln();
+            ISolution sln = new SearchMatrixSln();
             sln.Execute();
+
+            //StrongLift sl = new StrongLift();
+            //sl.PlateCombine(130,5);
+
 
             Console.ReadLine();
         }

@@ -19,22 +19,23 @@ namespace LeetCode
             {
                 target -= target % 5;
             }
+
             int plateWeight = target - barWeight;
 
-            //plate SKU
+            //plate SKU, in pair
             Dictionary<int, int> availablePlates = new Dictionary<int, int>()
             {
-                {90,setCount },
-                {70,setCount },
-                {50,setCount },
-                {20,setCount },
-                {10,setCount },
-                {5,setCount }
+                {90, setCount},
+                {70, setCount},
+                {50, setCount},
+                {20, setCount},
+                {10, setCount},
+                {5, setCount}
             };
 
             List<int> plateUnit = new List<int>()
             {
-                90,70,50,20,10,5
+                90, 70, 50, 20, 10, 5
             };
 
             Queue<int> plates = new Queue<int>();
@@ -45,6 +46,7 @@ namespace LeetCode
                     plates.Enqueue(item);
                 }
             }
+
             PlateHandler(plates, new Stack<int>(), plateWeight);
         }
 
@@ -54,15 +56,18 @@ namespace LeetCode
             {
                 return;
             }
+
             if (target == 0)
             {
-                steps.ToList().ForEach(s => Console.WriteLine(s));
+                steps.ToList().ForEach(Console.WriteLine);
                 return;
             }
+
             if (plates.Count == 0)
             {
                 return;
             }
+
             var item = plates.Dequeue();
             if (target >= item)
             {
@@ -78,6 +83,5 @@ namespace LeetCode
 
             plates.Enqueue(item);
         }
-
     }
 }
