@@ -2,23 +2,17 @@
 
 namespace LeetCode.LeetAgain
 {
-    public class DeleteDuplicatesSln : ISolution
+    public class DeleteDuplicatesIISln : ISolution
     {
         public ListNode DeleteDuplicates(ListNode head)
         {
-            if (head?.next == null) return head;
+            var fakeHead = new ListNode(111) {next = head};
 
-            ListNode fakeHead = head;
-
-            while (head.next != null)
+            if (fakeHead.next != null)
             {
-                if (head.val == head.next.val)
-                    head.next = head.next.next;
-                else
-                    head = head.next;
             }
-            return fakeHead;
         }
+
         ListNode BuildNode(int[] arr)
         {
             ListNode header = new ListNode(arr[0]);
@@ -29,12 +23,13 @@ namespace LeetCode.LeetAgain
                 tempheader.next = tmp;
                 tempheader = tmp;
             }
+
             return header;
         }
 
         void ISolution.Execute()
         {
-            ListNode head = BuildNode(new[] { 1, 1 });
+            ListNode head = BuildNode(new[] {1, 1});
             DeleteDuplicates(head);
         }
     }

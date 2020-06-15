@@ -6,22 +6,29 @@ namespace LeetCode.LeetAgain
     {
         public bool SearchMatrix(int[][] matrix, int target)
         {
-            var arrayCount = matrix.GetLength(0);
-            if (arrayCount == 0)
+            int height = matrix.GetLength(0);
+            if (height == 0)
                 return false;
-            var eachCount = matrix[0].Length;
-            if (eachCount == 0)
-                return false;
-            int lengthLocation = BinarySearchForMatrix(matrix, 0, arrayCount - 1, target, eachCount);
+            int width = matrix[0].Length;
 
-            if (lengthLocation == -1)
-                return false;
+            int lo = 0;
+            int hi = height * width - 1;
 
-            int itemLocation = BinarySerachArray(matrix, lengthLocation, 0, eachCount - 1, target);
-            if (itemLocation == -1)
-                return false;
 
-            return true;
+            while (lo != hi)
+            {
+                int mid = (hi + lo - 1) / 2;
+                if (matrix[mid / width][mid % width] < target)
+                {
+                    lo = mid + 1;
+                }
+                else
+                {
+                    hi = mid;
+                }
+            }
+
+            return matrix[hi / width][hi % width] == target;
         }
 
         private int BinarySearchForMatrix(int[][] matrix, int low, int high, int key, int eachCount)
@@ -57,10 +64,11 @@ namespace LeetCode.LeetAgain
 
         void ISolution.Execute()
         {
+            System.Console.WriteLine(SearchMatrix(new int[1][] {new[] {1}}, 1));
             System.Console.WriteLine(SearchMatrix(
                 new int[4][] {new[] {1, 2, 3}, new[] {4, 5, 6}, new[] {7, 8, 9}, new[] {11, 12, 13}},
                 2));
-            System.Console.WriteLine(SearchMatrix(new int[3][] {new[] {1}, new[] {3}, new[] {5}}, 1));
+            System.Console.WriteLine(SearchMatrix(new int[3][] {new[] {1}, new[] {3}, new[] {5}}, 61));
         }
     }
 }
