@@ -1,4 +1,6 @@
-﻿using LeetCode.Leets;
+﻿using System;
+using System.Collections.Generic;
+using LeetCode.Leets;
 
 namespace LeetCode.LeetAgain
 {
@@ -6,11 +8,31 @@ namespace LeetCode.LeetAgain
     {
         public ListNode DeleteDuplicates(ListNode head)
         {
-            var fakeHead = new ListNode(111) {next = head};
-
-            if (fakeHead.next != null)
+            var fakeHead = new ListNode(111) {next = null};
+            var tHead = fakeHead;
+            /*
+             *Input: 1->1->1->2->3
+             *Output: 2->3
+             *
+             */
+            HashSet<int> hs = new HashSet<int>();
+            while (head != null)
             {
+                if (hs.Add(head.val) && (head.next == null || head.next.val != head.val))
+                {
+                    fakeHead.next = head;
+                    fakeHead = head;
+                    hs.Clear();
+                }
+                else
+                {
+                    fakeHead.next = null;
+                }
+
+                head = head.next;
             }
+
+            return tHead.next;
         }
 
         ListNode BuildNode(int[] arr)
@@ -29,7 +51,7 @@ namespace LeetCode.LeetAgain
 
         void ISolution.Execute()
         {
-            ListNode head = BuildNode(new[] {1, 1});
+            ListNode head = BuildNode(new[] {1, 2, 3,3,4});
             DeleteDuplicates(head);
         }
     }

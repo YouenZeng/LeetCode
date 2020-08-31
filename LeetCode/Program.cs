@@ -13,7 +13,7 @@ namespace LeetCode
             //Nga nga = new Nga();
             //nga.TryGenerate();
 
-            ISolution sln = new SearchRotatedArray();
+            ISolution sln = new MaximalRectangleSln();
             sln.Execute();
 
             //StrongLift sl = new StrongLift();
