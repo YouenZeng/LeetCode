@@ -10,8 +10,8 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            Nga nga = new Nga();
-            nga.TryGenerate();
+            Console.WriteLine(CRC16.CRC16_ccitt(System.Text.Encoding.ASCII.GetBytes("2020051300U1234567890ABCDEFGHIJKLMN"),0,35));
+
 
             //ISolution sln = new ThreeSumSln();
             //sln.Execute();
@@ -19,4 +19,6 @@ namespace LeetCode
             //Console.ReadLine();
         }
     }
+
+
 }
