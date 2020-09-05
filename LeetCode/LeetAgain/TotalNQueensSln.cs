@@ -1,27 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace LeetCode.LeetAgain
 {
-    class SolveNQueensSln : ISolution
+    class TotalNQueensSln : ISolution
     {
-        IList<IList<string>> finalResult = new List<IList<string>>();
-        public IList<IList<string>> SolveNQueens(int n)
+
+        int totalCount = 0;
+        public int TotalNQueens(int n)
         {
-            //plain solution
-
             int[,] queen = new int[n, n];
-
             NQueenInternal(queen, 0);
-            return finalResult;
+            return totalCount;
         }
+
 
         private void NQueenInternal(int[,] queen, int row)
         {
             if (row >= queen.GetLength(0))
             {
-                var s = DrawQueen(queen);
-                finalResult.Add(s);
+                totalCount++;
             }
 
             //backtrack/DFS
@@ -63,32 +62,10 @@ namespace LeetCode.LeetAgain
             return true;
         }
 
-        private IList<string> DrawQueen(int[,] queen)
-        {
-            IList<string> result = new List<string>();
-            for (int i = 0; i < queen.GetLength(0); i++)
-            {
-                string s = string.Empty;
-                for (int j = 0; j < queen.GetLength(0); j++)
-                {
-                    if (queen[i, j] == 1)
-                    {
-                        s += "Q";
-                    }
-                    else
-                    {
-                        s += ".";
-                    }
-                }
 
-                result.Add(s);
-            }
-
-            return result;
-        }
         public void Execute()
         {
-            Console.WriteLine(SolveNQueens(4));
+            TotalNQueens(10);
         }
     }
 }

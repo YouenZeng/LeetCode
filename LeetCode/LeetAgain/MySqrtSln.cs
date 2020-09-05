@@ -4,23 +4,17 @@
     {
         public int MySqrt(int x)
         {
-            int max = 46340;
-            int min = 1;
+            //=> r(n + 1) = r(n) - f(r(n)) / f'(r(n))
+            //=> r(n + 1) = r(n) - (r(n) ^ 2 - x) / 2 * r(n)
+            //=> r(n + 1) = r(n) - r(n) / 2 + x / 2 * r(n)
+            //=> r(n + 1) = (r(n) + x / r(n)) / 2
 
-            while (min < max)
+            long r = x;
+            while(r*r -x > 0)
             {
-                int mid = min + (max - min) / 2;
-                if (mid * mid > x)
-                {
-                    max = mid;
-                }
-                else
-                {
-                    min = mid + 1;
-                }
+                r = (r + x / r) / 2;
             }
-            if (min * min > x) min = min - 1;
-            return min;
+            return (int)r;
         }
         public void Execute()
         {

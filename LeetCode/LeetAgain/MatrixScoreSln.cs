@@ -1,4 +1,6 @@
-﻿namespace LeetCode.LeetAgain
+﻿using System.Collections.Generic;
+
+namespace LeetCode.LeetAgain
 {
     internal class MatrixScoreSln : ISolution
     {

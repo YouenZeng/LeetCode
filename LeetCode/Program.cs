@@ -10,13 +10,17 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            Console.WriteLine(CRC16.CRC16_ccitt(System.Text.Encoding.ASCII.GetBytes("2020051300U1234567890ABCDEFGHIJKLMN"),0,35));
+            //Nga nga = new Nga();
+            //nga.TryGenerate();
+
+            ISolution sln = new MaximalRectangleSln();
+            sln.Execute();
+
+            //StrongLift sl = new StrongLift();
+            //sl.PlateCombine(130,5);
 
 
-            //ISolution sln = new ThreeSumSln();
-            //sln.Execute();
-
-            //Console.ReadLine();
+            Console.ReadLine();
         }
     }
 
