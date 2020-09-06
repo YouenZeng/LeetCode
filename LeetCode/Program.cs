@@ -10,7 +10,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new PathSumSln();
+            ISolution sln = new NumDistinctSln();
             sln.Execute();
 
             Console.ReadLine();
