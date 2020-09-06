@@ -12,84 +12,58 @@ namespace LeetCode.LeetAgain
     {
         public IList<IList<int>> LevelOrderBottom(TreeNode root)
         {
-            IList<IList<int>> result = new List<IList<int>>();
+            List<IList<int>> result = new List<IList<int>>();
 
-            if (root == null) return result;
+            List<int> r = new List<int>();
+            if (root == null)
+                return result;
+            Queue<TreeNode> currentLayer = new Queue<TreeNode>();
 
-            Queue<TreeNode> Q = new Queue<TreeNode>();
+            currentLayer.Enqueue(root);
 
-            TreeNode fakeNode = new TreeNode(0);
-            Q.Enqueue(root);
-            Q.Enqueue(fakeNode);
-
-            IList<int> lst = new List<int>() { root.val };
-
-            Stack<IList<int>> resultStack = new Stack<IList<int>>();
-            resultStack.Push(lst);
-
-            lst = new List<int>();
-
-            while (Q.Count > 1)
+            int layerCount = 1;
+            while (currentLayer.Count > 0)
             {
-                TreeNode u = Q.Dequeue();
-                if (u.left != null)
+                if (layerCount == 0)
                 {
-                    Q.Enqueue(u.left);
-                    lst.Add(u.left.val);
+                    result.Add(r);
+                    r = new List<int>();
+                    layerCount = currentLayer.Count;
                 }
 
-                if (u.right != null)
+                var node = currentLayer.Dequeue();
+                layerCount--;
+
+                r.Add(node.val);
+                if (node.left != null)
                 {
-                    Q.Enqueue(u.right);
-                    lst.Add(u.right.val);
+                    currentLayer.Enqueue(node.left);
                 }
 
-                if (Q.Peek() == fakeNode && Q.Count > 1)
+                if (node.right != null)
                 {
-                    resultStack.Push(lst);
-                    lst = new List<int>();
-                    Q.Dequeue();
-                    Q.Enqueue(fakeNode);
+                    currentLayer.Enqueue(node.right);
                 }
             }
 
-            while (resultStack.Count > 0)
-            {
-                result.Add(resultStack.Pop());
-            }
-
+            if (r.Count > 0)
+                result.Add(r);
+            result.Reverse();
             return result;
-
-        }
-
-        private TreeNode BuildTree()
-        {
-            TreeNode top = new TreeNode(1);
-            top.left = new TreeNode(2);
-            top.right = new TreeNode(3);
-
-            top.left.left = new TreeNode(4);
-            top.left.right = new TreeNode(5);
-            top.left.left.left = new TreeNode(45);
-
-
-            top.right.left = new TreeNode(6);
-            top.right.right = new TreeNode(7);
-
-
-            top.right.left.left = new TreeNode(8);
-            top.right.left.right = new TreeNode(9);
-
-            top.right.right.left = new TreeNode(10);
-            top.right.right.right = new TreeNode(11);
-            return top;
         }
 
         public void Execute()
         {
-            TreeNode top = BuildTree();
-
-            LevelOrderBottom(top);
+            TreeNode node = new TreeNode(3)
+            {
+                left = new TreeNode(9),
+                right = new TreeNode(20)
+                {
+                    left = new TreeNode(15),
+                    right = new TreeNode(7)
+                }
+            };
+            LevelOrderBottom(node);
         }
     }
 }

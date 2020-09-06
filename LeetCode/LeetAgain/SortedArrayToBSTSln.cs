@@ -17,13 +17,6 @@ namespace LeetCode.LeetAgain
         {
             if (start > end) return null;
             if (start == end) return new TreeNode(nums[start]);
-            if (start + 1 == end)
-            {
-                return new TreeNode(nums[start])
-                {
-                    right = new TreeNode(nums[end])
-                };
-            }
 
             int middle = (end + start) / 2;
             return new TreeNode(nums[middle])
