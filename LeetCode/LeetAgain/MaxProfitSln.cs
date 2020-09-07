@@ -6,20 +6,38 @@ namespace LeetCode.LeetAgain
     {
         public int MaxProfit(int[] prices)
         {
-            int minBuyPrice = int.MaxValue;
+            int minPrice = int.MaxValue;
             int maxProfit = 0;
+
             for (int i = 0; i < prices.Length; i++)
             {
-                if (prices[i] < minBuyPrice)
-                    minBuyPrice = prices[i];
+                if (prices[i] < minPrice)
+                {
+                    minPrice = prices[i];
+                    continue;
+                }
 
-                maxProfit = Math.Max((prices[i] - minBuyPrice), maxProfit);
+                maxProfit = Math.Max(maxProfit, prices[i] - minPrice);
             }
+
             return maxProfit;
+        }
+
+
+        /// <summary>
+        /// 122. Best Time to Buy and Sell Stock II
+        /// </summary>
+        /// <param name="prices"></param>
+        /// <returns></returns>
+        public int MaxProfit2(int[] prices)
+        {
+
+
+            throw new NotImplementedException();
         }
         void ISolution.Execute()
         {
-            MaxProfit(new[] { 7, 16, 12, 35, 1, 12 });
+            MaxProfit(new[] {7, 16, 12, 35, 1, 12});
         }
     }
 }

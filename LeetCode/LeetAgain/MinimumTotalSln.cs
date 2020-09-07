@@ -8,27 +8,47 @@ namespace LeetCode.LeetAgain
     {
         public int MinimumTotal(IList<IList<int>> triangle)
         {
-            int itemSize = triangle.Count;
-            int[] memorize = triangle[itemSize - 1].ToArray();
-            for (int layer = itemSize - 2; layer >= 0; layer--)
+            int layerCount = triangle.Count;
+            if (layerCount == 0)
+                return 0;
+            int[] cache = new int[triangle.Last().Count];
+            cache[0] = triangle[0][0];
+
+            for (int i = 1; i < layerCount; i++)
             {
-                for (int i = 0; i <= layer; i++)
+                cache[i] = cache[i - 1] + triangle[i][i];
+                for (int j = i-1; j >= 1; j--)
                 {
-                    memorize[i] = Math.Min(memorize[i], memorize[i + 1]) + triangle[layer][i];
+                    cache[j] = Math.Min(cache[j], cache[j - 1]) + triangle[i][j];
                 }
+
+                cache[0] = cache[0] + triangle[i][0];
             }
 
-            return memorize[0];
+            var min = int.MaxValue;
+            foreach (var t in cache)
+            {
+                min = Math.Min(min, t);
+            }
+
+            return min;
         }
+
         void ISolution.Execute()
         {
             IList<IList<int>> list = new List<IList<int>>()
             {
-                new List<int>() { 2},
-                new List<int>() { 3,4},
-                new List<int>() { 6,5,7},
-                new List<int>() { 4,1,8,3},
+                new List<int>() {2},
+                new List<int>() {3, 4},
+                new List<int>() {6, 5, 7},
+                new List<int>() {4, 1, 8, 3},
             };
+
+            //IList<IList<int>> list = new List<IList<int>>()
+            //{
+            //    new List<int>() {-1},
+            //    new List<int>() {-2, -3},
+            //};
 
             Console.WriteLine(MinimumTotal(list));
         }
