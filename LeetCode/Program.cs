@@ -10,17 +10,12 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            //Nga nga = new Nga();
-            //nga.TryGenerate();
-
-            ISolution sln = new NumDecodingsSln();
+            ISolution sln = new NumDistinctSln();
             sln.Execute();
-
-            //StrongLift sl = new StrongLift();
-            //sl.PlateCombine(130,5);
-
 
             Console.ReadLine();
         }
     }
+
+
 }
