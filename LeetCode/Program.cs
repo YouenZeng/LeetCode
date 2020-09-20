@@ -10,7 +10,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new NumDistinctSln();
+            ISolution sln = new LongestConsecutiveSln();
             sln.Execute();
 
             Console.ReadLine();
