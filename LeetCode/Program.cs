@@ -11,7 +11,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new MaxProfitSln();
+            ISolution sln = new PalindromePartitioningSln();
             sln.Execute();
 
             Console.ReadLine();
