@@ -1,26 +1,26 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 
-namespace LeetCode.LeetAgain
+namespace LeetCode.LeetAgain.NodeNew
 {
-    public class Node2
+    public class Node
     {
         public int val;
-        public Node2 left;
-        public Node2 right;
-        public Node2 next;
+        public Node left;
+        public Node right;
+        public Node next;
 
-        public Node2()
+        public Node()
         {
         }
 
-        public Node2(int _val)
+        public Node(int _val)
         {
             val = _val;
         }
 
-        public Node2(int _val, Node2 _left, Node2 _right, Node2 _next)
+        public Node(int _val, Node _left, Node _right, Node _next)
         {
             val = _val;
             left = _left;
@@ -32,26 +32,85 @@ namespace LeetCode.LeetAgain
     public class ConnectSln : ISolution
     {
         /// <summary>
-        /// 117. Populating Next Right Pointers in Each Node II
+        /// 116
         /// </summary>
         /// <param name="root"></param>
         /// <returns></returns>
-        public Node2 Connect2(Node2 root)
+        public Node Connect(Node root)
         {
-            throw new NotImplementedException();
-        }
-
-        public Node2 Connect(Node2 root)
-        {
+            if (root == null)
+                return null;
             //BFS
 
+            Queue<Node> q = new Queue<Node>();
+            q.Enqueue(root);
+            int layerCount = 1;
+            while (q.Count > 0)
+            {
+                if (layerCount == 0)
+                {
+                    layerCount = q.Count;
+                }
+
+                var n = q.Dequeue();
+                layerCount--;
+
+                if (layerCount > 0)
+                {
+                    n.next = q.Peek();
+                }
+
+                if (n.left != null)
+                    q.Enqueue(n.left);
+                if (n.right != null)
+                    q.Enqueue(n.right);
+            }
+
+
+            return root;
+        }
+
+        /// <summary>
+        /// 116
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public Node Connect2(Node root)
+        {
+            var start = root;
+            while (start != null)
+            {
+                var current = start;
+                while (current != null)
+                {
+                    if (current.left != null)
+                        current.left.next = current.right;
+                    if (current.right != null && current.next != null)
+                        current.right.next = current.next.left;
+
+                    current = current.next;
+                }
+
+                start = start.left;
+            }
+
+            return root;
+        }
+
+        /// <summary>
+        /// 117
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public Node Connect3(Node root)
+        {
             if (root == null)
                 return null;
 
-            Queue<Node2> q = new Queue<Node2>();
+            Queue<Node> q = new Queue<Node>();
             q.Enqueue(root);
             int layerCount = 1;
-            Node2 prevNode = null;
+            Node prevNode = null;
             while (q.Count > 0)
             {
                 if (layerCount == 0)
@@ -77,24 +136,49 @@ namespace LeetCode.LeetAgain
             return root;
         }
 
+        /// <summary>
+        /// 117
+        /// </summary>
+        /// <param name="root"></param>
+        /// <returns></returns>
+        public Node Connect4(Node root)
+        {
+            Node head = root;//The left most node in the lower level
+            Node prev = null;//The previous node in the lower level
+            Node curr = null;//The current node in the upper level
+            while (head != null)
+            {
+                curr = head;
+                prev = null;
+                head = null;
+                while (curr != null)
+                {
+                    if (curr.left != null)
+                    {
+                        if (prev != null)
+                            prev.next = curr.left;
+                        else
+                            head = curr.left;
+                        prev = curr.left;
+                    }
+                    if (curr.right != null)
+                    {
+                        if (prev != null)
+                            prev.next = curr.right;
+                        else
+                            head = curr.right;
+                        prev = curr.right;
+                    }
+                    curr = curr.next;
+                }
+            }
+            return root;
+        }
+
 
         public void Execute()
         {
-            var n = new Node2(1)
-            {
-                //left = new Node2(2)
-                //{
-                //    left = new Node2(4),
-                //    right = new Node2(5)
-                //},
-                //right = new Node2(3)
-                //{
-                //    left = new Node2(6),
-                //    right = new Node2(7)
-                //}
-            };
-
-            Connect(n);
+            throw new System.NotImplementedException();
         }
     }
 }
