@@ -11,7 +11,7 @@ namespace LeetCode
         static void Main(string[] args)
         {
 
-            ISolution sln = new LongestConsecutiveSln();
+            ISolution sln = new SumNumbersSln();
             sln.Execute();
 
             Console.ReadLine();
