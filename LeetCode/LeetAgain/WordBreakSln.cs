@@ -1,37 +1,77 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace LeetCode.LeetAgain
 {
     class WordBreakSln : ISolution
     {
-        public bool WordBreak(string s, IList<string> wordDict)
+        public bool WordBreak139(string s, IList<string> wordDict)
         {
-            int stringLength = s.Length;
-            bool[] dp = new bool[stringLength + 1];
-
-            dp[0] = true;
-
-            for (int i = 1; i <= stringLength; i++)
+            HashSet<int> hs = new HashSet<int> {0};
+            for (int i = 1; i <= s.Length; i++)
             {
                 for (int j = 0; j < i; j++)
                 {
-                    if (dp[j] && wordDict.Contains(s.Substring(j, i - j)))
+                    if (hs.Contains(j) && wordDict.Contains(s.Substring(j, i - j)))
                     {
-                        dp[i] = true;
+                        hs.Add(i);
                         break;
                     }
                 }
             }
 
-            return dp[stringLength];
+            return hs.Contains(s.Length);
         }
+
+        Dictionary<string, List<string>> dict = new Dictionary<string, List<string>>();
+
+        /// <summary>
+        /// 140
+        /// </summary>
+        /// <param name="s"></param>
+        /// <param name="wordDict"></param>
+        /// <returns></returns>
+        public IList<string> WordBreak(string s, IList<string> wordDict)
+        {
+            List<string> res = new List<string>();
+            if (string.IsNullOrEmpty(s))
+            {
+                return res;
+            }
+
+            if (dict.ContainsKey(s))
+            {
+                return dict[s];
+            }
+
+            if (wordDict.Contains(s))
+            {
+                res.Add(s);
+            }
+
+            for (int i = 1; i < s.Length; i++)
+            {
+                string t = s.Substring(i);
+                if (wordDict.Contains(t))
+                {
+                    IList<string> temp = WordBreak(s.Substring(0, i), wordDict);
+                    if (temp.Count > 0)
+                    {
+                        for (int j = 0; j < temp.Count; j++)
+                        {
+                            res.Add(temp[j] + " " + t);
+                        }
+                    }
+                }
+            }
+
+            dict[s] = res;
+            return res;
+        }
+
         public void Execute()
         {
-            WordBreak("leetcodere", new[] { "leet", "co","d","e", "re"});
+            WordBreak("aaaaaaaaaaaaaaa", new[] {"aaaa", "aa", "aaa"});
+            WordBreak("leetcodere", new[] {"leet", "co", "d", "e", "re"});
         }
     }
 }

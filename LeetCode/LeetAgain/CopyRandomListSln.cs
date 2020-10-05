@@ -1,36 +1,74 @@
 ﻿using System.Collections.Generic;
 
-namespace LeetCode.LeetAgain
+namespace LeetCode.LeetAgain.CopyRandomList
 {
     internal class CopyRandomListSln
     {
+        Dictionary<Node, Node> dict = new Dictionary<Node, Node>();
+
         //https://leetcode.com/problems/copy-list-with-random-pointer/
         public Node CopyRandomList(Node head)
         {
-            if (head == null) return null;
-            Dictionary<Node, Node> dict = new Dictionary<Node, Node>();
-            Node tempHead = head;
-            while (tempHead != null)
+            if (head == null)
+                return null;
+            var newHead = new Node(head.val, null, null);
+            dict[head] = newHead;
+
+            if (head.next != null && dict.ContainsKey(head.next))
             {
-                Node newHead = new Node(tempHead.val, tempHead.next, tempHead.random);
-                dict.Add(tempHead, newHead);
-                tempHead = tempHead.next;
+                newHead.next = dict[head.next];
+            }
+            else
+            {
+                newHead.next = CopyRandomList(head.next);
             }
 
-            tempHead = head;
-            while (tempHead != null)
+            if (head.random != null && dict.ContainsKey(head.random))
             {
-                if(tempHead.next!=null)
-                    dict[tempHead].next = dict[tempHead.next];
-
-                if(tempHead.random!=null)
-                    dict[tempHead].random = dict[tempHead.random];
-
-                tempHead = tempHead.next;
+                newHead.random = dict[head.random];
+            }
+            else
+            {
+                newHead.random = CopyRandomList(head.random);
             }
 
-            return dict[head];
+            return newHead;
+        }
 
+
+        public Node CopyRandomListII(Node head)
+        {
+
+            //TODO: NOT COMPLETED
+            if (head == null)
+                return null;
+
+            //1. Copy next
+            //2. Copy random
+            //3. Seperate ..
+
+            var dh = head;
+            while (dh != null)
+            {
+                var tempHead = new Node(dh.val, dh.next, dh.random);
+                dh.next = tempHead;
+                dh = tempHead.next;
+            }
+
+            var result = head;
+            while (result != null)
+            {
+                var copyNode = result.next;
+               
+                result.next = copyNode.next;
+
+                result = result.next;
+                copyNode.next = result == null ? null : result.next;
+                copyNode.random = copyNode.random == null ? null : copyNode.random.next;
+            }
+
+
+            return head.next;
         }
     }
 

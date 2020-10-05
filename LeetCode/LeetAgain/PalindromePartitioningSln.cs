@@ -1,38 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 
 namespace LeetCode.LeetAgain
 {
     public class PalindromePartitioningSln : ISolution
     {
-        readonly IList<IList<string>> result = new List<IList<string>>();
-
-        public IList<IList<string>> Partition(string s)
+        public int MinCut(string s)
         {
-            if (string.IsNullOrEmpty(s))
-                return result;
-            Dfs(s, 0, new Stack<string>());
+            int[] minDp = new int[s.Length + 1];
+            bool[,] checkDp = new bool[s.Length + 1, s.Length + 1];
 
-            return result;
-        }
-
-        private void Dfs(string s, int startIndex, Stack<string> stack)
-        {
-            for (int i = startIndex; i < s.Length; i++)
+            for (int i = 0; i < s.Length; i++)
             {
-                if (IsPalindrome(s, startIndex, i))
+                minDp[i] = i;
+                for (int j = 0; j <= i; j++)
                 {
-                    stack.Push(s.Substring(startIndex, i - startIndex + 1));
-                    Dfs(s, i + 1, stack);
-                    stack.Pop();
+                    //if (IsPalindrome(s, j, i))
+                    //{
+                    //    minDp[i] = j == 0 ? 0 : Math.Min(minDp[i], minDp[j - 1] + 1);
+                    //}
+
+                    if (s[j] == s[i] && (j + 1 > i - 1 || checkDp[j + 1, i - 1]))
+                    {
+                        checkDp[j, i] = true;
+                        minDp[i] = j == 0 ? 0 : Math.Min(minDp[i], minDp[j - 1] + 1);
+                    }
                 }
             }
 
-            if (startIndex == s.Length)
-            {
-                result.Add(new List<string>(stack.Reverse()));
-            }
+            return minDp[s.Length - 1];
         }
 
         private bool IsPalindrome(string s, int start, int end)
@@ -50,7 +45,7 @@ namespace LeetCode.LeetAgain
 
         public void Execute()
         {
-            Partition("");
+            MinCut("aabfssd");
         }
     }
 }
