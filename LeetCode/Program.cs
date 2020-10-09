@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new GetIntersectionNodeSln();
+            ISolution sln = new TitleToNumberSln();
             sln.Execute();
 
             Console.ReadLine();
