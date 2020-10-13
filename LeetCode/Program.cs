@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new TitleToNumberSln();
+            ISolution sln = new LargestNumberSln();
             sln.Execute();
 
             Console.ReadLine();
