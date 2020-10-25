@@ -1,40 +1,41 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using LeetCode.Leets;
 
 namespace LeetCode.LeetAgain
 {
-    class TwoSumSln:ISolution
+    class TwoSumSln : ISolution
     {
         public int[] TwoSum(int[] numbers, int target)
         {
-            int start = 0;
-            int end = numbers.Length-1;
+            int slow = 0;
+            int fast = numbers.Length - 1;
             int[] result = new int[2];
-            while (start<end)
+            while (slow < fast)
             {
-                if ((numbers[start] + numbers[end]) > target)
+                if (numbers[slow] + numbers[fast] < target)
                 {
-                    end--;
+                    slow++;
                 }
-                if ((numbers[start] + numbers[end]) < target)
+                else if (numbers[slow] + numbers[fast] > target)
                 {
-                    start++;
+                    fast--;
                 }
-                if ((numbers[start] + numbers[end]) ==target)
+                else
                 {
-                    result[0] = start + 1;
-                    result[1] = end + 1;
-                    break;
+                    result[0] = ++slow;
+                    result[1] = ++fast;
+                    return result;
                 }
             }
 
             return result;
         }
+
         public void Execute()
         {
-            Console.WriteLine(TwoSum(new []{ 2, 7, 11, 15 },9));
+            Console.WriteLine(TwoSum(new[] {2, 7, 11, 15}, 9));
+            Console.WriteLine(TwoSum(new[] {1, 2, 29, 30, 35}, 59));
+            Console.WriteLine(TwoSum(new[] {2, 3, 4}, 6));
+            Console.WriteLine(TwoSum(new[] {-1, 0}, -1));
         }
     }
 }

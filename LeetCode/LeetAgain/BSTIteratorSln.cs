@@ -1,7 +1,6 @@
 ﻿using LeetCode.Leets;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace LeetCode.LeetAgain
 {
@@ -11,35 +10,37 @@ namespace LeetCode.LeetAgain
     /// </summary>
     public class BSTIterator : ISolution
     {
-        Stack<TreeNode> treeStack = new Stack<TreeNode>();
+        Stack<TreeNode> stack = new Stack<TreeNode>();
 
         public BSTIterator(TreeNode root)
         {
-            FullfillStack(root);
-        }
-
-        /** @return whether we have a next smallest number */
-        public bool HasNext()
-        {
-            return treeStack.Count > 0;
+            TraverseNode(root);
         }
 
         /** @return the next smallest number */
         public int Next()
         {
-            TreeNode popNode = treeStack.Pop();
-            FullfillStack(popNode.right);
-            return popNode.val;
+            var n = stack.Pop();
+            TraverseNode(n.right);
+            return n.val;
         }
 
-        private void FullfillStack(TreeNode treeNode)
+        /** @return whether we have a next smallest number */
+        public bool HasNext()
         {
-            while (treeNode != null)
+            return stack.Count > 0;
+        }
+
+        private void TraverseNode(TreeNode node)
+        {
+            while (node != null)
             {
-                treeStack.Push(treeNode);
-                treeNode = treeNode.left;
+                stack.Push(node);
+                node = node.left;
             }
         }
+
+
         public void Execute()
         {
             throw new NotImplementedException();

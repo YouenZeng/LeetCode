@@ -10,18 +10,19 @@ namespace LeetCode.LeetAgain
     {
         public int MajorityElement(int[] nums)
         {
+            //Array.Sort(nums);
+            //return nums[nums.Length / 2];
             int count = 0, ret = 0;
             foreach (int num in nums)
             {
                 if (count == 0)
                     ret = num;
-                if (num != ret)
-                    count--;
-                else
-                    count++;
+                count += ret == num ? 1 : -1;
             }
+
             return ret;
         }
+
         public void Execute()
         {
             throw new NotImplementedException();
