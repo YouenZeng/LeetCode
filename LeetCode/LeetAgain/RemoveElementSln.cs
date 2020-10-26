@@ -1,4 +1,5 @@
 ﻿using System;
+using LeetCode.Leets;
 
 namespace LeetCode.LeetAgain
 {
@@ -22,6 +23,10 @@ namespace LeetCode.LeetAgain
             return nums.Length - N;
         }
 
+        public ListNode RemoveElements(ListNode head, int val)
+        {
+
+        }
 
         public void Execute()
         {

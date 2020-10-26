@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LargestNumberSln();
+            ISolution sln = new NumIslandsSln();
             sln.Execute();
 
             Console.ReadLine();
