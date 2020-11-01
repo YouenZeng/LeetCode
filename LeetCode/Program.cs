@@ -8,7 +8,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new NumIslandsSln();
+            ISolution sln = new DailyTemperaturesSln();
             sln.Execute();
 
             Console.ReadLine();

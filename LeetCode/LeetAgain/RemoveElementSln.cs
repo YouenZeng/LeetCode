@@ -25,7 +25,7 @@ namespace LeetCode.LeetAgain
 
         public ListNode RemoveElements(ListNode head, int val)
         {
-
+            throw new NotImplementedException();
         }
 
         public void Execute()
