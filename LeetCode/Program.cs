@@ -1,5 +1,6 @@
-using LeetCode.LeetAgain;
 using System;
+using System.Collections.Generic;
+using LeetCode.Challenge;
 
 
 namespace LeetCode
@@ -8,10 +9,9 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LargestNumberSln();
+            ISolution sln = new RangeSumBSTSln();
             sln.Execute();
 
-            Console.ReadLine();
         }
     }
 }
