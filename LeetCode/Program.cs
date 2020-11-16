@@ -1,4 +1,5 @@
 using LeetCode.LeetAgain;
+using LeetCode.Lof;
 using System;
 
 
@@ -8,7 +9,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new DailyTemperaturesSln();
+            ISolution sln = new FibSln();
             sln.Execute();
 
             Console.ReadLine();
