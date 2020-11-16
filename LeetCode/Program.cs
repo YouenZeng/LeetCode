@@ -1,6 +1,5 @@
+using LeetCode.LeetAgain;
 using System;
-using System.Collections.Generic;
-using LeetCode.Challenge;
 
 
 namespace LeetCode
@@ -9,9 +8,10 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new RangeSumBSTSln();
+            ISolution sln = new DailyTemperaturesSln();
             sln.Execute();
 
+            Console.ReadLine();
         }
     }
 }
