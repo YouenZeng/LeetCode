@@ -11,7 +11,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new AtMostNGivenDigitSetSln();
+            ISolution sln = new CanFinishSln();
             sln.Execute();
 
 
