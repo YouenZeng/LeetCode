@@ -47,8 +47,10 @@ namespace LeetCode.LeetAgain
         public void Execute()
         {
             // DecodeString("3[a]2[bc]");
-            DecodeString("3[a2[c]]");
-            DecodeString("32[abc]3[cd]ef");
+            Console.WriteLine(DecodeString("3[a2[c]]"));
+            ;
+            Console.WriteLine(DecodeString("32[abc]3[cd]ef"));
+            ;
         }
     }
 }
