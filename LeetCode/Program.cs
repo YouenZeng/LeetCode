@@ -12,7 +12,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CanFinishSln();
+            ISolution sln = new BasicCalculatorIISln();
             sln.Execute();
 
 
