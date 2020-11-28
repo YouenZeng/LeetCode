@@ -11,7 +11,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CanFinishSln();
+            ISolution sln = new MaxSubArrayWIPSln();
             sln.Execute();
 
 
