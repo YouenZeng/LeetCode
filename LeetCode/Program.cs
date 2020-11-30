@@ -1,4 +1,5 @@
 using System;
+using LeetCode.Challenge;
 using System.Threading;
 using System.Threading.Tasks;
 using LeetCode.Challenge;
@@ -14,7 +15,6 @@ namespace LeetCode
             sln.Execute();
 
 
-
             Console.ReadLine();
         }
     }
@@ -23,11 +23,11 @@ namespace LeetCode
     {
         private ManualResetEvent manualResetEventSlim = new ManualResetEvent(false);
         private AutoResetEvent ars = new AutoResetEvent(true);
-        
+
         public void Go()
         {
             //manualResetEventSlim.Reset();
-            
+
             Task.Run(() =>
             {
                 manualResetEventSlim.WaitOne();
@@ -49,8 +49,6 @@ namespace LeetCode
             Thread.Sleep(2000);
             Console.WriteLine("Set slim");
             manualResetEventSlim.Set();
-
         }
     }
-
 }
