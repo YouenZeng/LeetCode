@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using LeetCode.Challenge;
 using LeetCode.LeetAgain;
 
 namespace LeetCode
@@ -9,7 +10,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new MaximumWealthSln();
+            ISolution sln = new CanPlaceFlowersSln();
             sln.Execute();
 
 
