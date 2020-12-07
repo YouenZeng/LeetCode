@@ -10,7 +10,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new LongestPrefixSln();
+            ISolution sln = new LeetAgain.LongestPrefixSln();
             sln.Execute();
 
 
