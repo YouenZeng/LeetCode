@@ -1,5 +1,4 @@
 using System;
-using LeetCode.Challenge;
 using System.Threading;
 using System.Threading.Tasks;
 using LeetCode.Challenge;
@@ -11,7 +10,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CanPlaceFlowersSln();
+            ISolution sln = new LongestPrefixSln();
             sln.Execute();
 
 
