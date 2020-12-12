@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using LeetCode.Challenge;
 using LeetCode.LeetAgain;
+using LeetCode.Leets;
 
 namespace LeetCode
 {
@@ -10,7 +11,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new CanPlaceFlowersSln();
+            ISolution sln = new Challenge.ValidMountainArraySln();
             sln.Execute();
 
 
@@ -23,11 +24,11 @@ namespace LeetCode
     {
         private ManualResetEvent manualResetEventSlim = new ManualResetEvent(false);
         private AutoResetEvent ars = new AutoResetEvent(true);
-        
+
         public void Go()
         {
             //manualResetEventSlim.Reset();
-            
+
             Task.Run(() =>
             {
                 manualResetEventSlim.WaitOne();
