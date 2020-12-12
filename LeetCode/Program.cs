@@ -15,7 +15,6 @@ namespace LeetCode
             sln.Execute();
 
 
-
             Console.ReadLine();
         }
     }
@@ -50,8 +49,6 @@ namespace LeetCode
             Thread.Sleep(2000);
             Console.WriteLine("Set slim");
             manualResetEventSlim.Set();
-
         }
     }
-
 }
