@@ -32,6 +32,28 @@ namespace LeetCode.LeetAgain
             return result;
         }
 
+        public int Reverse2(int x)
+        {
+            var str = x.ToString();
+            int result = 0;
+
+            for (var i = str.Length - 1; i >= 0; i--)
+            {
+                if (i == 0 && str[i] == '-')
+                {
+                    break;
+                }
+                var backupResult = result;
+                result = result * 10 + (str[i] - '0');
+                if ((backupResult > 0 && result < 0) || (backupResult < 0 && result > 0))
+                {
+                    return 0;
+                }
+            }
+            if (str[0] == '-') result = -result;
+            return result;
+        }
+
         public int Reverse(int x)
         {
             if (x == 0) return 0;

@@ -30,6 +30,33 @@ namespace LeetCode.LeetAgain
             return s.Substring(start, max + 1);
         }
 
+
+        public int LongestPalindrome2(string s)
+        {
+            int[] stat = new int[128];
+            for (int i = 0; i < s.Length; i++)
+            {
+                stat[s[i] - 'A']++;
+            }
+
+            bool hasOdd = false;
+            int result = 0;
+            for (int i = 0; i < stat.Length; i++)
+            {
+                if (stat[i] % 2 == 0)
+                {
+                    result += stat[i];
+                }
+                else
+                {
+                    result += stat[i];
+                    result -= 1;
+                    hasOdd = true;
+                }
+            }
+            return hasOdd ? result + 1 : result;
+        }
+
         //private int start, maxLength;
         //public string LongestPalindrome(string s)
         //{
@@ -115,7 +142,7 @@ namespace LeetCode.LeetAgain
                     c = i;
                 }
             }
-            char[] dest = new char[len*2+1];
+            char[] dest = new char[len * 2 + 1];
             //char[] ss = copyOfRange(s2, c - len, c + len + 1);
             Array.Copy(s2, c - len, dest, 0, len * 2 + 1);
             return new string(removeBoundaries(dest));

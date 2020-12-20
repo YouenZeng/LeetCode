@@ -34,6 +34,7 @@ namespace LeetCode.LeetAgain
         }
         public void Execute()
         {
+            SortedSquares(new[] { 1,2 });
             SortedSquares(new[] { -4, -1, 0, 3, 10 });
             SortedSquares(new[] { -7, -3, 2, 3, 11 });
         }

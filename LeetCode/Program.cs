@@ -1,7 +1,9 @@
-using LeetCode.LeetAgain;
 using System;
-using LeetCode.LeetAgain.CopyRandomList;
-
+using System.Threading;
+using System.Threading.Tasks;
+using LeetCode.Challenge;
+using LeetCode.LeetAgain;
+using LeetCode.Leets;
 
 namespace LeetCode
 {
@@ -9,13 +11,44 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new DailyTemperaturesSln();
+            ISolution sln = new Challenge.SortedSquaresSln();
             sln.Execute();
 
-            Console.ReadLine();
-            var a = 3;
-            var test = new CopyRandomListSln();
 
+            Console.ReadLine();
+        }
+    }
+
+    public class ThreadTest
+    {
+        private ManualResetEvent manualResetEventSlim = new ManualResetEvent(false);
+        private AutoResetEvent ars = new AutoResetEvent(true);
+
+        public void Go()
+        {
+            //manualResetEventSlim.Reset();
+
+            Task.Run(() =>
+            {
+                manualResetEventSlim.WaitOne();
+                Console.WriteLine("In task.");
+
+                manualResetEventSlim.WaitOne();
+                Console.WriteLine("In task2.");
+            });
+
+            Task.Run(() =>
+            {
+                manualResetEventSlim.WaitOne();
+                Console.WriteLine("Innnnnnn task.");
+
+                manualResetEventSlim.WaitOne();
+                Console.WriteLine("Innnnnnn task2.");
+            });
+
+            Thread.Sleep(2000);
+            Console.WriteLine("Set slim");
+            manualResetEventSlim.Set();
         }
     }
 }
