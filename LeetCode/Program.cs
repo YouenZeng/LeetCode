@@ -1,5 +1,6 @@
 using LeetCode.LeetAgain;
 using System;
+using LeetCode.LeetAgain.CopyRandomList;
 
 
 namespace LeetCode
@@ -12,6 +13,9 @@ namespace LeetCode
             sln.Execute();
 
             Console.ReadLine();
+            var a = 3;
+            var test = new CopyRandomListSln();
+
         }
     }
 }

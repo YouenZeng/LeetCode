@@ -4,6 +4,15 @@ namespace LeetCode.LeetAgain.CopyRandomList
 {
     internal class CopyRandomListSln
     {
+
+        public CopyRandomListSln()
+        {
+
+        }
+        public CopyRandomListSln(int a)
+        {
+
+        }
         Dictionary<Node, Node> dict = new Dictionary<Node, Node>();
 
         //https://leetcode.com/problems/copy-list-with-random-pointer/
