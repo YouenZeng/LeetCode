@@ -10,7 +10,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new DistanceKSln();
+            ISolution sln = new LeetAgain.MaxScoreWordsSln();
             sln.Execute();
 
 
