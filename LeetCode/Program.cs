@@ -11,7 +11,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new Challenge.SortedSquaresSln();
+            ISolution sln = new Challenge.SwapPairsSln();
             sln.Execute();
 
 
