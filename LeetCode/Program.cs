@@ -1,4 +1,5 @@
 using System;
+using LeetCode.Challenge;
 
 namespace LeetCode
 {
@@ -6,14 +7,14 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-
-            ISolution sln = new LeetAgain.LongestDiverseStringSln();
+            ISolution sln = new Challenge.CheckArithmeticSubarraysSln();
             sln.Execute();
-
 
             Console.ReadLine();
         }
     }
 
- 
+
+
+
 }
