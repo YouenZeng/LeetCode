@@ -11,7 +11,7 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new Challenge.LongestPalindromeSln();
+            ISolution sln = new Challenge.MinimumDeviationSln();
             sln.Execute();
 
 
