@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace LeetCode.Challenge
@@ -12,7 +13,7 @@ namespace LeetCode.Challenge
                 new PriorityQueue<int>(10, Comparer<int>.Create((x, y) => y.CompareTo(x)));
             int result = int.MaxValue;
             int min = int.MaxValue;
-
+            
             foreach (int num in nums)
             {
                 int n = num;

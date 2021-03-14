@@ -1,9 +1,8 @@
 using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
-using LeetCode.Challenge;
-using LeetCode.LeetAgain;
-using LeetCode.Leets;
+using DijkstraAlgorithm;
 
 namespace LeetCode
 {
@@ -11,11 +10,20 @@ namespace LeetCode
     {
         static void Main(string[] args)
         {
-            ISolution sln = new Challenge.MinimumDeviationSln();
+            // Dijkstra.Go(null);
+
+
+            ISolution sln = new Challenge.MajorityElementSln();
             sln.Execute();
 
+            string s = "";
 
-            Console.ReadLine();
+            //PeekingIterator pi = new PeekingIterator((new List<int>() {1, 2, 3}).GetEnumerator());
+            //pi.Next();
+            //pi.Peek();
+            //pi.Next();
+            //pi.Next();
+            //pi.HasNext();
         }
     }
 

@@ -1,11 +1,9 @@
-﻿
-using System;
+﻿using System;
 
 namespace DijkstraAlgorithm
 {
     public class Dijkstra
     {
-
         private static int MinimumDistance(int[] distance, bool[] shortestPathTreeSet, int verticesCount)
         {
             int min = int.MaxValue;
@@ -50,7 +48,8 @@ namespace DijkstraAlgorithm
                 shortestPathTreeSet[u] = true;
 
                 for (int v = 0; v < verticesCount; ++v)
-                    if (!shortestPathTreeSet[v] && Convert.ToBoolean(graph[u, v]) && distance[u] != int.MaxValue && distance[u] + graph[u, v] < distance[v])
+                    if (!shortestPathTreeSet[v] && Convert.ToBoolean(graph[u, v]) && distance[u] != int.MaxValue &&
+                        distance[u] + graph[u, v] < distance[v])
                         distance[v] = distance[u] + graph[u, v];
             }
 
@@ -59,17 +58,18 @@ namespace DijkstraAlgorithm
 
         public static void Go(string[] args)
         {
-            int[,] graph =  {
-                         { 0, 6, 0, 0, 0, 0, 0, 9, 0 },
-                         { 6, 0, 9, 0, 0, 0, 0, 11, 0 },
-                         { 0, 9, 0, 5, 0, 6, 0, 0, 2 },
-                         { 0, 0, 5, 0, 9, 16, 0, 0, 0 },
-                         { 0, 0, 0, 9, 0, 10, 0, 0, 0 },
-                         { 0, 0, 6, 0, 10, 0, 2, 0, 0 },
-                         { 0, 0, 0, 16, 0, 2, 0, 1, 6 },
-                         { 9, 11, 0, 0, 0, 0, 1, 0, 5 },
-                         { 0, 0, 2, 0, 0, 0, 6, 5, 0 }
-                            };
+            int[,] graph =
+            {
+                {0, 4, 0, 0, 0, 0, 0, 8, 0},
+                {4, 0, 8, 0, 0, 0, 0, 11, 0},
+                {0, 8, 0, 7, 0, 4, 0, 0, 2},
+                {0, 0, 7, 0, 9, 14, 0, 0, 0},
+                {0, 0, 0, 9, 0, 10, 0, 0, 0},
+                {0, 0, 4, 14, 10, 0, 2, 0, 0},
+                {0, 0, 0, 0, 0, 2, 0, 1, 6},
+                {8, 11, 0, 0, 0, 0, 1, 0, 7},
+                {0, 0, 2, 0, 0, 0, 6, 7, 0}
+            };
 
             DijkstraAlgo(graph, 0, 9);
         }
