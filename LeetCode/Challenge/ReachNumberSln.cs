@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace LeetCode.Challenge
 {
@@ -9,23 +7,37 @@ namespace LeetCode.Challenge
         public int ReachNumber(int target)
         {
             target = Math.Abs(target);
-            int k = 0;
-            while (target > 0)
+            int sum = 0;
+            int seed = 0;
+            while (sum < target)
             {
-                target -= ++k;
+                seed++;
+                sum += seed;
+                
             }
 
-            return target % 2 == 0 ? k : k + 1 + k % 2;
-        }
+            if (sum == target)
+            {
+                return seed;
+            }
 
-        private int Reach(int target)
-        {
-            throw new NotImplementedException();
-        }
+            int gap = sum - target;
+            if (gap % 2 == 0)
+            {
+                return seed;
+            }
 
+            if ((gap + (seed + 1)) % 2 == 0)
+            {
+                return seed + 1;
+            }
+            return seed + 2;
+        }
         public void Execute()
         {
-            throw new NotImplementedException();
+            Console.WriteLine(ReachNumber(3));
+            Console.WriteLine(ReachNumber(2));
+            Console.WriteLine(ReachNumber(5));
         }
     }
 }
